@@ -1,0 +1,91 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SubNavbar from "@/components/SubNavbar";
+import PACESubNavbar from "@/components/PACESubNavbar";
+import { motion } from "framer-motion";
+import { ArrowRight, Map, GitBranch, Layers, Compass } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import heroImg from "@/assets/service-hero-pace.jpg";
+
+const solutions = [
+  { icon: Map, title: "Career Pathway Mapping", description: "Design clear, multi-directional career pathways that show employees every possible route to growth — lateral, vertical, and diagonal." },
+  { icon: GitBranch, title: "Role Family Architecture", description: "Organize roles into logical families with defined levels, competency progressions, and transition requirements." },
+  { icon: Layers, title: "Career Lattice Design", description: "Move beyond traditional ladders with lattice models that enable cross-functional movement, skill-based progression, and portfolio careers." },
+  { icon: Compass, title: "Career Navigation Tools", description: "Digital platforms that help employees explore career options, identify skill gaps, and create personalized development roadmaps." },
+];
+
+const CareerPathArchitecture = () => {
+  const { ref, isInView } = useScrollAnimation(0.1);
+  const { ref: impactRef, isInView: impactInView } = useScrollAnimation(0.1);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <SubNavbar title="Services" titlePath="/what-we-do" items={[
+        { label: "ASER", path: "/what-we-do/services/aser" },
+        { label: "HRCAMS", path: "/what-we-do/services/hrcams" },
+        { label: "TCB", path: "/what-we-do/services/tcb" },
+        { label: "PACE", path: "/what-we-do/services/pace" },
+      ]} />
+      <PACESubNavbar />
+
+      <section className="relative min-h-[50vh] flex items-center overflow-hidden">
+        <img src={heroImg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-30" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent" />
+        <div className="relative container mx-auto px-4 lg:px-8 py-28">
+          <motion.span className="text-[11px] font-bold tracking-[0.15em] text-cap-orange uppercase mb-4 block" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>PACE</motion.span>
+          <motion.h1 className="text-[40px] md:text-[56px] lg:text-[72px] font-black tracking-tight leading-[1.05] mb-6 max-w-4xl" initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }}>
+            Career Path Architecture
+          </motion.h1>
+          <motion.p className="text-[18px] md:text-[20px] text-muted-foreground leading-[1.6] max-w-2xl" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.5 }}>
+            Give every employee a roadmap to growth. We design career architectures that retain top talent and create a culture of continuous advancement.
+          </motion.p>
+        </div>
+      </section>
+
+      <section className="py-24" ref={ref}>
+        <div className="container mx-auto px-4 lg:px-8">
+          <motion.h2 className="text-[32px] md:text-[40px] font-bold mb-12" initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}}>Our Solutions</motion.h2>
+          <div className="grid md:grid-cols-2 gap-8">
+            {solutions.map((s, i) => (
+              <motion.div key={s.title} className="bg-card border border-border/30 p-8 group hover:border-cap-blue/40 transition-all" initial={{ opacity: 0, y: 30 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 * i }} whileHover={{ y: -4 }}>
+                <s.icon className="w-10 h-10 text-cap-orange mb-5 group-hover:scale-110 transition-transform" />
+                <h3 className="text-[18px] font-bold mb-3 group-hover:text-cap-blue transition-colors">{s.title}</h3>
+                <p className="text-[14px] text-muted-foreground leading-[1.6]">{s.description}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-24 section-navy" ref={impactRef}>
+        <div className="container mx-auto px-4 lg:px-8 grid lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <motion.h2 className="text-[32px] md:text-[40px] font-bold mb-6" initial={{ opacity: 0, y: 20 }} animate={impactInView ? { opacity: 1, y: 0 } : {}}>Clear Paths, Stronger Retention</motion.h2>
+            <motion.p className="text-[16px] text-muted-foreground leading-[1.6]" initial={{ opacity: 0 }} animate={impactInView ? { opacity: 1 } : {}} transition={{ delay: 0.2 }}>
+              Employees who see a clear career path are significantly more engaged and less likely to leave. Career architecture pays for itself.
+            </motion.p>
+          </div>
+          <div className="grid grid-cols-2 gap-6">
+            {[{ value: "76%", label: "Higher Engagement" }, { value: "50%", label: "Lower Turnover" }, { value: "3x", label: "Internal Mobility" }, { value: "88%", label: "Career Clarity" }].map((stat, i) => (
+              <motion.div key={stat.label} className="bg-card/50 border border-border/20 p-6 text-center" initial={{ opacity: 0, scale: 0.9 }} animate={impactInView ? { opacity: 1, scale: 1 } : {}} transition={{ delay: 0.1 * i }}>
+                <div className="text-[32px] font-black text-cap-orange mb-1">{stat.value}</div>
+                <div className="text-[12px] text-muted-foreground">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 bg-cap-blue text-center">
+        <div className="container mx-auto px-4">
+          <h2 className="text-[24px] font-bold mb-4 text-primary-foreground">Design career paths that inspire growth</h2>
+          <a href="#" className="inline-flex items-center gap-2 bg-foreground text-background px-8 py-4 text-[16px] font-semibold hover:gap-3 transition-all">Get started <ArrowRight className="w-5 h-5" /></a>
+        </div>
+      </section>
+      <Footer />
+    </div>
+  );
+};
+
+export default CareerPathArchitecture;
