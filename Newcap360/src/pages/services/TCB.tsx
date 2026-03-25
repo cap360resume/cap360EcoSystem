@@ -552,7 +552,7 @@ const TCB = () => {
               </div>
               <div className="md:col-span-2">
                 <h3 className="text-[28px] font-bold mb-2">Shivinder Mandhotra</h3>
-                <p className="text-cap-orange font-semibold text-[14px] mb-6 uppercase tracking-wider">Founder & Lead Trainer</p>
+                <p className="text-cap-orange font-semibold text-[14px] mb-6 uppercase tracking-wider"> Lead Trainer</p>
                 <div className="space-y-4 mb-8">
                   <p className="text-[15px] text-muted-foreground leading-[1.8]">
                     A rare combination of seasoned corporate leader and certified Power Coach, Shivinder brings 28+ years of hands-on experience across India's most respected organizations—Godrej & Boyce, Wipro, Amardeep Designs, and Intex Technologies.
