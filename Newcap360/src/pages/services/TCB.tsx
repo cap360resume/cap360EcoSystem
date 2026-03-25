@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SubNavbar from "@/components/SubNavbar";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import { 
   ArrowRight, 
   BookOpen, 
@@ -27,6 +28,7 @@ import trending2 from "@/assets/trending-2.jpg";
 import trending3 from "@/assets/trending-3.jpg";
 import trending4 from "@/assets/trending-4.jpg";
 
+
 const serviceSubNav = [
   { label: "Overview", path: "#overview" },
   { label: "Why Choose Us", path: "#why-us" },
@@ -44,42 +46,48 @@ const offerings = [
     title: "Leadership Development", 
     description: "Immersive learning for emerging and senior leaders building strategic thinking and change leadership.",
     color: "bg-cap-blue",
-    gradient: "from-cap-blue/10 to-transparent"
+    gradient: "from-cap-blue/10 to-transparent",
+    path: "/what-we-do/services/tcb/leadership-development"
   },
   { 
     icon: Laptop, 
     title: "Digital & Technical Upskilling", 
     description: "Role-based academies covering AI, data analytics, cloud computing, and cybersecurity.",
     color: "bg-cap-orange",
-    gradient: "from-cap-orange/10 to-transparent"
+    gradient: "from-cap-orange/10 to-transparent",
+    path: "/what-we-do/services/tcb/digital-upskilling"
   },
   { 
     icon: Users, 
     title: "Team Effectiveness", 
     description: "Workshops strengthening team dynamics, collaboration, and organizational communication.",
     color: "bg-cap-green",
-    gradient: "from-cap-green/10 to-transparent"
+    gradient: "from-cap-green/10 to-transparent",
+    path: "/what-we-do/services/tcb/team-effectiveness"
   },
   { 
     icon: Lightbulb, 
     title: "Innovation & Design Thinking", 
     description: "Bootcamps embedding design thinking, agile methodologies, and creative problem-solving.",
     color: "bg-cap-red",
-    gradient: "from-cap-red/10 to-transparent"
+    gradient: "from-cap-red/10 to-transparent",
+    path: "/what-we-do/services/tcb/innovation-design-thinking"
   },
   { 
     icon: GraduationCap, 
     title: "Learning Experience Design", 
     description: "Custom blended ecosystems with micro-learning, gamification, and mentoring.",
     color: "bg-cap-dark-blue",
-    gradient: "from-cap-dark-blue/10 to-transparent"
+    gradient: "from-cap-dark-blue/10 to-transparent",
+    path: "/what-we-do/services/tcb/learning-experience-design"
   },
   { 
     icon: Award, 
     title: "Certification & Compliance", 
     description: "Industry-recognized certifications and regulatory compliance training at scale.",
     color: "bg-cap-orange",
-    gradient: "from-cap-orange/10 to-transparent"
+    gradient: "from-cap-orange/10 to-transparent",
+    path: "/what-we-do/services/tcb/certification-compliance"
   },
 ];
 
@@ -167,6 +175,7 @@ const trendingInsights = [
 ];
 
 const TCB = () => {
+  const navigate = useNavigate();
   const { ref: statsRef, isInView: statsInView } = useScrollAnimation(0.2);
   const { ref: offerRef, isInView: offerInView } = useScrollAnimation(0.1);
   const { ref: whyRef, isInView: whyInView } = useScrollAnimation(0.1);
@@ -210,45 +219,71 @@ const TCB = () => {
 
       {/* Hero Section */}
       <section className="relative min-h-[85vh] flex items-center bg-background overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImg} alt="" className="w-full h-full object-cover opacity-35" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
-        </div>
-        <div className="relative container mx-auto px-4 lg:px-8 py-28">
-          <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, delay: 0.1 }}>
-            <span className="text-cap-orange font-semibold text-[14px] tracking-wider uppercase">Transform Your Organization</span>
-          </motion.div>
-          <motion.h1 
-            className="text-[42px] md:text-[58px] lg:text-[72px] font-black tracking-tight leading-[1.05] mb-6 max-w-4xl mt-4" 
-            initial={{ opacity: 0, y: 40 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            Training & Capability Building
-          </motion.h1>
-          <motion.p 
-            className="text-[18px] md:text-[20px] text-muted-foreground leading-[1.7] max-w-2xl mb-8" 
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            Build future-ready capabilities at scale. Transform knowledge gaps into competitive advantages through immersive, outcome-driven learning experiences designed by industry leaders with 28+ years of expertise.
-          </motion.p>
-          <motion.div 
-            className="flex gap-4 flex-wrap"
-            initial={{ opacity: 0, y: 20 }} 
-            animate={{ opacity: 1, y: 0 }} 
-            transition={{ duration: 0.6, delay: 0.6 }}
-          >
-            <button className="bg-cap-orange text-background px-8 py-4 font-semibold hover:bg-cap-orange/90 transition-all hover:shadow-lg rounded-md">
-              Schedule a Consultation
-            </button>
-            <button className="border border-foreground/30 text-foreground px-8 py-4 font-semibold hover:border-cap-orange/50 hover:bg-cap-orange/5 transition-all rounded-md">
-              Explore Programs
-            </button>
-          </motion.div>
-        </div>
-      </section>
+
+  {/* Background */}
+  <div className="absolute inset-0">
+    {/* Image */}
+    <img
+      src={heroImg}
+      alt=""
+      className="w-full h-full object-cover opacity-60 scale-105"
+    />
+
+    {/* Soft Light Overlay (instead of dark) */}
+    <div className="absolute inset-0 bg-gradient-to-r from-background/95 via-background/80 to-background/30" />
+
+    {/* Subtle Color Glow */}
+    <div className="absolute top-0 left-0 w-[28rem] h-[28rem] bg-cap-orange/10 blur-[120px]" />
+  </div>
+
+  {/* Content */}
+  <div className="relative container mx-auto px-4 lg:px-8 py-28">
+
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.1 }}
+    >
+      <span className="text-cap-orange font-semibold text-[14px] tracking-wider uppercase">
+        Transform Your Organization
+      </span>
+    </motion.div>
+
+    <motion.h1
+      className="text-[42px] md:text-[58px] lg:text-[72px] font-black tracking-tight leading-[1.05] mb-6 max-w-4xl mt-4"
+      initial={{ opacity: 0, y: 40 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.2 }}
+    >
+      Training & Capability Building
+    </motion.h1>
+
+    <motion.p
+      className="text-[18px] md:text-[20px] text-muted-foreground leading-[1.7] max-w-2xl mb-8"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.4 }}
+    >
+      Build future-ready capabilities at scale. Transform knowledge gaps into competitive advantages through immersive, outcome-driven learning experiences designed by industry leaders with 28+ years of expertise.
+    </motion.p>
+
+    <motion.div
+      className="flex gap-4 flex-wrap"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: 0.6 }}
+    >
+      <button className="bg-cap-orange text-background px-8 py-4 font-semibold hover:bg-cap-orange/90 transition-all hover:shadow-xl rounded-md">
+        Schedule a Consultation
+      </button>
+
+      <button className="border border-foreground/30 text-foreground px-8 py-4 font-semibold hover:border-cap-orange/50 hover:bg-cap-orange/10 transition-all rounded-md">
+        Explore Programs
+      </button>
+    </motion.div>
+
+  </div>
+</section>
 
       {/* Stats Section */}
       <section className="py-20 border-y border-border/20" ref={statsRef}>
@@ -275,24 +310,55 @@ const TCB = () => {
       </section>
 
       {/* Overview Section */}
-      <section id="overview" className="py-24 bg-gradient-to-b from-background to-secondary/30">
-        <div className="container mx-auto px-4 lg:px-8">
-          <motion.div 
-            className="max-w-3xl"
-            initial={{ opacity: 0, y: 20 }} 
-            animate={offerInView ? { opacity: 1, y: 0 } : {}} 
-            ref={offerRef}
-          >
-            <h2 className="text-[32px] md:text-[42px] font-bold mb-6">About Cap360</h2>
-            <p className="text-[16px] text-muted-foreground leading-[1.8] mb-6">
-              Cap360 stands for "Capability Building 360"—a comprehensive one-stop solution provider specializing in corporate training, executive coaching, and business consultancy. We work with organizations of all sizes across India to identify challenges, design customized solutions, and deliver sustainable organizational transformation.
-            </p>
-            <p className="text-[16px] text-muted-foreground leading-[1.8]">
-              Our Vertical Training Capability Building approach means we don't just deliver one-off workshops. We go deep—conducting in-depth organizational assessment, creating comprehensive development plans, delivering immersive training experiences, and providing ongoing coaching to ensure behavioral change sticks and business results are sustained.
-            </p>
-          </motion.div>
+    <section id="overview" className="py-24 bg-gradient-to-b from-background to-secondary/30">
+  <div className="container mx-auto px-4 lg:px-8">
+
+    <motion.div
+      className="max-w-5xl"
+      initial={{ opacity: 0, y: 20 }}
+      animate={offerInView ? { opacity: 1, y: 0 } : {}}
+      ref={offerRef}
+    >
+
+      {/* Heading */}
+      <div className="mb-10">
+        <p className="text-sm text-cap-orange tracking-wide mb-2">
+          ABOUT CAP360
+        </p>
+
+        <h2 className="text-[32px] md:text-[42px] font-bold leading-tight">
+          Building Capabilities That Drive
+          <span className="text-cap-orange"> Real Business Impact</span>
+        </h2>
+      </div>
+
+      {/* Content Grid */}
+      <div className="grid md:grid-cols-2 gap-10">
+
+        {/* Left Block */}
+        <div className="border-l-2 border-cap-orange/40 pl-6">
+          <p className="text-[16px] text-muted-foreground leading-[1.8]">
+            <span className="text-foreground font-medium">Cap360</span> stands for 
+            <span className="text-foreground font-medium"> "Capability Building 360"</span>—a one-stop solution provider specializing in corporate training, executive coaching, and business consultancy.
+          </p>
         </div>
-      </section>
+
+        {/* Right Block */}
+        <div className="border-l-2 border-cap-orange/40 pl-6">
+          <p className="text-[16px] text-muted-foreground leading-[1.8]">
+            We go beyond workshops—conducting deep organizational assessments, designing tailored solutions, and delivering long-term capability building with measurable outcomes.
+          </p>
+        </div>
+
+      </div>
+
+      {/* Bottom Highlight Line */}
+      <div className="mt-12 h-[2px] w-16 bg-cap-orange"></div>
+
+    </motion.div>
+
+  </div>
+</section>
 
       {/* Offerings Grid */}
       <section id="programs" className="py-24">
@@ -315,12 +381,13 @@ const TCB = () => {
           >
             {offerings.map((item, i) => (
               <motion.div 
-                key={item.title} 
-                className="group relative bg-gradient-to-br from-card to-card/50 border border-border/30 overflow-hidden hover:border-cap-orange/40 transition-all duration-300 rounded-lg p-8 hover:shadow-lg hover:shadow-cap-orange/10"
+                key={item.title}
+                className="group relative bg-gradient-to-br from-card to-card/50 border border-border/30 overflow-hidden hover:border-cap-orange/40 transition-all duration-300 rounded-lg p-8 hover:shadow-lg hover:shadow-cap-orange/10 cursor-pointer"
                 initial={{ opacity: 0, y: 30 }} 
                 animate={offerInView ? { opacity: 1, y: 0 } : {}} 
                 transition={{ delay: 0.08 * i }}
                 whileHover={{ y: -6 }}
+                onClick={() => navigate(item.path)}
               >
                 <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient}`} />
@@ -346,46 +413,76 @@ const TCB = () => {
       </section>
 
       {/* Why Choose Us Section */}
-      <section id="why-us" className="py-24 section-navy relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-cap-orange/5 rounded-full blur-3xl -z-0" />
-        
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={whyInView ? { opacity: 1, y: 0 } : {}}
-            ref={whyRef}
-            className="mb-16"
-          >
-            <h2 className="text-[32px] md:text-[42px] font-bold mb-6">Why Choose Cap360?</h2>
-            <p className="text-[16px] text-muted-foreground max-w-2xl">Founder-led expertise combined with certified coaching credentials and a proven track record of measurable business results.</p>
-          </motion.div>
+     <section id="why-us" className="py-28 section-navy relative overflow-hidden">
+  {/* Background Glow Elements */}
+  <div className="absolute top-0 right-0 w-[28rem] h-[28rem] bg-cap-orange/10 rounded-full blur-[120px] -z-0" />
+  <div className="absolute bottom-0 left-0 w-[22rem] h-[22rem] bg-cap-blue/10 rounded-full blur-[100px] -z-0" />
 
-          <motion.div 
-            className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
-            initial="hidden"
-            animate={whyInView ? "visible" : "hidden"}
-            variants={containerVariants}
-          >
-            {whyChooseUs.map((item, i) => (
-              <motion.div
-                key={item.title}
-                className="group bg-background/40 backdrop-blur-sm border border-border/40 p-8 rounded-lg hover:border-cap-orange/40 hover:bg-background/60 transition-all duration-300"
-                variants={itemVariants}
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <div className="w-12 h-12 rounded-lg bg-cap-orange/20 flex items-center justify-center flex-shrink-0 group-hover:bg-cap-orange/30 transition-colors">
-                    <item.icon className="w-6 h-6 text-cap-orange" />
-                  </div>
-                  <div>
-                    <h3 className="text-[16px] font-bold group-hover:text-cap-orange transition-colors">{item.title}</h3>
-                  </div>
-                </div>
-                <p className="text-[14px] text-muted-foreground leading-[1.6] ml-16">{item.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+  <div className="container mx-auto px-4 lg:px-8 relative z-10">
+    
+    {/* Heading */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      animate={whyInView ? { opacity: 1, y: 0 } : {}}
+      ref={whyRef}
+      className="mb-20 max-w-3xl"
+    >
+      <div className="inline-block mb-4">
+        <div className="h-[3px] w-16 bg-cap-orange rounded-full mb-3"></div>
+        <span className="text-cap-orange text-sm tracking-wider uppercase">Why Cap360</span>
+      </div>
+
+      <h2 className="text-[34px] md:text-[44px] font-bold leading-tight mb-6">
+        Why Choose <span className="text-cap-orange">Cap360?</span>
+      </h2>
+
+      <p className="text-[16px] text-muted-foreground leading-relaxed">
+        Founder-led expertise combined with certified coaching credentials and a proven track record of measurable business results.
+      </p>
+    </motion.div>
+
+    {/* Cards */}
+    <motion.div 
+      className="grid md:grid-cols-2 lg:grid-cols-3 gap-10"
+      initial="hidden"
+      animate={whyInView ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
+      {whyChooseUs.map((item, i) => (
+        <motion.div
+          key={item.title}
+          variants={itemVariants}
+          className="group relative rounded-xl p-[1px] bg-gradient-to-br from-cap-orange/20 via-transparent to-cap-blue/20 hover:from-cap-orange/40 transition-all duration-500"
+        >
+          <div className="h-full w-full bg-background/60 backdrop-blur-xl border border-white/5 rounded-xl p-8 relative overflow-hidden transition-all duration-300 group-hover:bg-background/70 group-hover:shadow-[0_10px_40px_rgba(255,115,0,0.15)]">
+            
+            {/* Hover Glow Overlay */}
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-cap-orange/5 to-transparent" />
+
+            {/* Icon */}
+            <div className="flex items-start gap-4 mb-5 relative z-10">
+              <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-cap-orange/20 to-cap-orange/10 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition duration-300 shadow-inner">
+                <item.icon className="w-6 h-6 text-cap-orange" />
+              </div>
+
+              <h3 className="text-[17px] font-semibold leading-snug group-hover:text-cap-orange transition-colors">
+                {item.title}
+              </h3>
+            </div>
+
+            {/* Description */}
+            <p className="text-[14px] text-muted-foreground leading-[1.7] pl-[4.25rem] relative z-10">
+              {item.desc}
+            </p>
+
+            {/* Bottom Accent Line */}
+            <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-cap-orange group-hover:w-full transition-all duration-500" />
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
       {/* Our Approach - 4 Phase Process */}
       <section id="approach" className="py-24">
@@ -599,55 +696,6 @@ const TCB = () => {
           </motion.div>
         </div>
       </section>
-
-      {/* Leaders Team
-      <section id="leaders" className="py-24">
-        <div className="container mx-auto px-4 lg:px-8">
-          <motion.h2 
-            className="text-[32px] md:text-[42px] font-bold mb-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={leadersInView ? { opacity: 1, y: 0 } : {}}
-          >
-            Our Leadership Team
-          </motion.h2>
-          <motion.p 
-            className="text-[16px] text-muted-foreground mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={leadersInView ? { opacity: 1, y: 0 } : {}}
-          >
-            Specialized expertise across sales management, digital learning, and leadership development.
-          </motion.p>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              { name: "Shivinder Mandhotra", role: "Lead — Training & Capability Building", specialty: "28+ years corporate experience" },
-              { name: "David Park", role: "Lead — Digital Learning Design", specialty: "Advanced curriculum development" },
-              { name: "Amara Diallo", role: "Lead — Leadership Development", specialty: "Executive coaching & transformation" },
-            ].map((l, i) => (
-              <motion.div 
-                key={l.name} 
-                className="group text-center"
-                initial={{ opacity: 0, y: 20 }} 
-                animate={leadersInView ? { opacity: 1, y: 0 } : {}} 
-                transition={{ delay: 0.1 * i }}
-              >
-                <div className="w-full max-w-xs mx-auto aspect-square bg-gradient-to-br rounded-lg mb-6 border border-border/30 overflow-hidden flex items-center justify-center text-[48px] font-black group-hover:border-cap-orange/40 transition-all"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg, ${['#3B82F6', '#F97316', '#10B981'][i]}/20, ${['#3B82F6', '#F97316', '#10B981'][i]}/5)`,
-                  }}
-                >
-                  <span className={`${['text-cap-blue', 'text-cap-orange', 'text-cap-green'][i]}`}>
-                    {l.name.split(" ").map(n => n[0]).join("")}
-                  </span>
-                </div>
-                <h3 className="text-[18px] font-bold mb-2 group-hover:text-cap-orange transition-colors">{l.name}</h3>
-                <p className="text-[14px] text-muted-foreground mb-2">{l.role}</p>
-                <p className="text-[12px] font-semibold text-cap-orange">{l.specialty}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section> */}
 
       {/* CTA Section */}
       <section className="relative bg-gradient-to-r from-background via-background to-secondary overflow-hidden py-20">
