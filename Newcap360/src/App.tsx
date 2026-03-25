@@ -38,6 +38,7 @@ import RoleAlignment from "./pages/services/pace/RoleAlignment.tsx";
 import SuccessionPlanning from "./pages/services/pace/SuccessionPlanning.tsx";
 import CareerTransition from "./pages/services/pace/CareerTransition.tsx";
 import IndividualDevelopment from "./pages/services/pace/IndividualDevelopment.tsx";
+import ReinventWithPACE from "./pages/services/pace/ReinventWithPACE.tsx";
 
 const queryClient = new QueryClient();
 
@@ -84,6 +85,7 @@ const App = () => (
           <Route path="/what-we-do/services/pace/succession-planning" element={<SuccessionPlanning />} />
           <Route path="/what-we-do/services/pace/career-transition" element={<CareerTransition />} />
           <Route path="/what-we-do/services/pace/individual-development" element={<IndividualDevelopment />} />
+          <Route path="/what-we-do/services/pace/reinvent" element={<ReinventWithPACE />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

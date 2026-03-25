@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 const paceLinks = [
+  { label: "Reinvent with PACE", path: "/what-we-do/services/pace/reinvent" },
   { label: "Career Path Architecture", path: "/what-we-do/services/pace/career-path-architecture" },
   { label: "Professional Coaching", path: "/what-we-do/services/pace/professional-coaching" },
   { label: "Role Alignment", path: "/what-we-do/services/pace/role-alignment" },
