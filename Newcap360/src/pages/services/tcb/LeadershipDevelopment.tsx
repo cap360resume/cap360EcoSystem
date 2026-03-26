@@ -131,7 +131,7 @@ const ProgramCard = ({ program, index }) => {
           {/* Tag + Icon row */}
           <div className="flex items-start justify-between mb-6">
             <span
-              className="text-[9px] font-black tracking-[0.2em] px-3 py-1.5"
+              className="text-[10px] font-black tracking-[0.2em] px-3 py-1.5"
               style={{
                 color: program.accent,
                 backgroundColor: `${program.accent}18`,
@@ -153,33 +153,33 @@ const ProgramCard = ({ program, index }) => {
             </div>
           </div>
 
-          <h3 className="text-[18px] font-black leading-tight mb-2 tracking-tight">
+          <h3 className="text-[20px] font-black leading-tight mb-2 tracking-tight">
             {program.title}
           </h3>
           <p
-            className="text-[13px] font-semibold mb-4"
+            className="text-[15px] font-semibold mb-4"
             style={{ color: program.accent }}
           >
             {program.subtitle}
           </p>
-          <p className="text-[13px] text-muted-foreground leading-[1.7] mb-8">
+          <p className="text-[15px] text-muted-foreground leading-[1.7] mb-8">
             {program.description}
           </p>
 
           {/* Footer row */}
-          <div className="flex items-center justify-between pt-5 border-t border-border/10">
+          {/* <div className="flex items-center justify-between pt-5 border-t border-border/10">
             <div className="flex gap-4">
               <div>
-                <div className="text-[9px] font-bold tracking-[0.12em] text-muted-foreground uppercase mb-0.5">
+                <div className="text-[11px] font-bold tracking-[0.12em] text-muted-foreground uppercase mb-0.5">
                   Duration
                 </div>
-                <div className="text-[12px] font-bold">{program.format}</div>
+                <div className="text-[15px] font-bold">{program.format}</div>
               </div>
               <div>
-                <div className="text-[9px] font-bold tracking-[0.12em] text-muted-foreground uppercase mb-0.5">
+                <div className="text-[11px] font-bold tracking-[0.12em] text-muted-foreground uppercase mb-0.5">
                   Mode
                 </div>
-                <div className="text-[12px] font-bold">{program.mode}</div>
+                <div className="text-[15px] font-bold">{program.mode}</div>
               </div>
             </div>
             <motion.div
@@ -191,7 +191,7 @@ const ProgramCard = ({ program, index }) => {
                 style={{ color: program.accent }}
               />
             </motion.div>
-          </div>
+          </div> */}
         </div>
       </div>
     </motion.div>
@@ -247,13 +247,13 @@ const LeadershipDevelopment = () => {
             className="flex items-center gap-3 mb-6"
           >
             <div className="h-[1px] w-8 bg-cap-orange" />
-            <span className="text-[10px] font-black tracking-[0.25em] text-cap-orange uppercase">
+            <span className="text-[15px] font-black tracking-[0.25em] text-cap-orange uppercase">
               TCB · Leadership Development Stream
             </span>
           </motion.div>
 
           <motion.h1
-            className="text-[42px] md:text-[60px] lg:text-[80px] font-black tracking-tight leading-[1.0] mb-6 max-w-4xl"
+            className="text-[32px] md:text-[40px] lg:text-[60px] font-black tracking-tight leading-[1.0] mb-6 max-w-4xl"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.25 }}
@@ -268,7 +268,7 @@ const LeadershipDevelopment = () => {
           </motion.h1>
 
           <motion.p
-            className="text-[22px] md:text-[26px] text-foreground/85 leading-[1.75] max-w-2xl mb-10 font-normal"
+            className="text-[20px] md:text-[20px] text-foreground/85 leading-[1.75] max-w-2xl mb-10 font-normal"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -286,7 +286,7 @@ const LeadershipDevelopment = () => {
             {["6 Programmes", "Hybrid Format", "All Levels", "Coaching Included"].map((tag) => (
               <span
                 key={tag}
-                className="text-[11px] font-bold tracking-wide border border-border/30 px-4 py-2 text-muted-foreground"
+                className="text-[15px] font-bold tracking-wide border border-border/30 px-4 py-2 text-muted-foreground"
               >
                 {tag}
               </span>
@@ -311,9 +311,9 @@ const LeadershipDevelopment = () => {
                 transition={{ delay: i * 0.15 }}
                 className="px-10 py-10 first:pl-0 last:pr-0"
               >
-                <Icon className="w-7 h-7 text-cap-orange mb-4" />
-                <h3 className="text-[15px] font-black tracking-tight mb-3">{title}</h3>
-                <p className="text-[13px] text-muted-foreground leading-[1.7]">{body}</p>
+                <Icon className="w-9 h-9 text-cap-orange mb-4" />
+                <h3 className="text-[17px] font-black tracking-tight mb-3">{title}</h3>
+                <p className="text-[16px] text-muted-foreground leading-[1.7]">{body}</p>
               </motion.div>
             ))}
           </div>
@@ -326,7 +326,7 @@ const LeadershipDevelopment = () => {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <motion.p
-                className="text-[10px] font-black tracking-[0.2em] text-cap-orange uppercase mb-3"
+                className="text-[15px] font-black tracking-[0.2em] text-cap-orange uppercase mb-3"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
               >
@@ -414,7 +414,7 @@ const LeadershipDevelopment = () => {
                   <div className="text-[40px] font-black text-cap-orange leading-none mb-3">
                     {stat.value}
                   </div>
-                  <div className="text-[11px] font-semibold tracking-wide text-muted-foreground uppercase">
+                  <div className="text-[15px] font-semibold tracking-wide text-muted-foreground uppercase">
                     {stat.label}
                   </div>
                 </motion.div>
@@ -482,7 +482,7 @@ const LeadershipDevelopment = () => {
               <div className="text-white/90 text-[15px] font-semibold mb-6">levels covered</div>
               <motion.a
                 href="#"
-                className="inline-flex items-center gap-2 bg-white text-cap-orange px-7 py-3.5 text-[13px] font-black tracking-wide w-full justify-center hover:gap-4 transition-all duration-300"
+                className="inline-flex items-center gap-2 bg-white text-cap-orange px-7 py-3.5 text-[15px] font-black tracking-wide w-full justify-center hover:gap-4 transition-all duration-300"
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
               >

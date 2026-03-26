@@ -57,6 +57,11 @@
   }
 }
 
+.mosaic-card:hover .mosaic-title { opacity: 0 !important; }
+.mosaic-card:hover .mosaic-desc  { opacity: 1 !important; }
+.mosaic-card:hover .mosaic-overlay { opacity: 1 !important; }
+.mosaic-card:hover { background-color: #2a1a3e !important; }
+
 @layer base {
   * {
     @apply border-border;
