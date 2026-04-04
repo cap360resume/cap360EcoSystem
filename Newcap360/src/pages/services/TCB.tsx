@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import SubNavbar from "@/components/SubNavbar";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import card1 from "@/assets/card-1.jpg";
 import { 
   ArrowRight, 
   BookOpen, 
@@ -319,7 +320,7 @@ const TCB = () => {
               <motion.div key={stat.value} className="group" initial={{ opacity: 0, y: 30 }} animate={statsInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.1 * i }}>
                 <div className="w-12 h-1 bg-gradient-to-r from-cap-orange to-cap-red mb-6 group-hover:w-16 transition-all duration-300" />
                 <span className="text-[44px] md:text-[52px] font-black text-foreground block mb-2">{stat.value}</span>
-                <p className="text-[14px] text-muted-foreground leading-[1.6]">{stat.desc}</p>
+                <p className="text-[16px] text-muted-foreground leading-[1.6]">{stat.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -338,13 +339,13 @@ const TCB = () => {
             </div>
             <div className="grid md:grid-cols-2 gap-10">
               <div className="border-l-2 border-cap-orange/40 pl-6">
-                <p className="text-[16px] text-muted-foreground leading-[1.8]">
+                <p className="text-[18px] text-muted-foreground leading-[1.8]">
                   <span className="text-foreground font-medium">Cap360</span> stands for
                   <span className="text-foreground font-medium"> "Capability Building 360"</span>—a one-stop solution provider specializing in corporate training, executive coaching, and business consultancy.
                 </p>
               </div>
               <div className="border-l-2 border-cap-orange/40 pl-6">
-                <p className="text-[16px] text-muted-foreground leading-[1.8]">
+                <p className="text-[18px] text-muted-foreground leading-[1.8]">
                   We go beyond workshops—conducting deep organizational assessments, designing tailored solutions, and delivering long-term capability building with measurable outcomes.
                 </p>
               </div>
@@ -365,7 +366,7 @@ const TCB = () => {
             className="mb-12"
           >
             <h2 className="text-[32px] md:text-[42px] font-bold mb-4">Our Training Solutions</h2>
-            <p className="text-[16px] text-muted-foreground max-w-2xl">
+            <p className="text-[18px] text-muted-foreground max-w-2xl">
               Comprehensive, modular programs addressing every aspect of organizational capability development.
             </p>
           </motion.div>
@@ -547,7 +548,7 @@ const TCB = () => {
             <h2 className="text-[34px] md:text-[44px] font-bold leading-tight mb-6">
               Why Choose <span className="text-cap-orange">Cap360?</span>
             </h2>
-            <p className="text-[16px] text-muted-foreground leading-relaxed">
+            <p className="text-[18px] text-muted-foreground leading-relaxed">
               Founder-led expertise combined with certified coaching credentials and a proven track record of measurable business results.
             </p>
           </motion.div>
@@ -563,7 +564,7 @@ const TCB = () => {
                     </div>
                     <h3 className="text-[17px] font-semibold leading-snug group-hover:text-cap-orange transition-colors">{item.title}</h3>
                   </div>
-                  <p className="text-[14px] text-muted-foreground leading-[1.7] pl-[4.25rem] relative z-10">{item.desc}</p>
+                  <p className="text-[16px] text-muted-foreground leading-[1.7] pl-[4.25rem] relative z-10">{item.desc}</p>
                   <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-cap-orange group-hover:w-full transition-all duration-500" />
                 </div>
               </motion.div>
@@ -573,41 +574,89 @@ const TCB = () => {
       </section>
 
       {/* ── Our Approach ───────────────────────────────────────────────────────── */}
-      <section id="approach" className="py-24">
-        <div className="container mx-auto px-4 lg:px-8">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={phaseInView ? { opacity: 1, y: 0 } : {}} ref={phaseRef} className="mb-20">
-            <h2 className="text-[32px] md:text-[42px] font-bold mb-6">Our 4-Phase Approach</h2>
-            <p className="text-[16px] text-muted-foreground max-w-2xl">A comprehensive methodology ensuring training translates into behavioral change and measurable business results.</p>
-          </motion.div>
+<section id="approach" className="py-28 relative">
+  <div className="container mx-auto px-4 lg:px-8">
 
-          <motion.div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" initial="hidden" animate={phaseInView ? "visible" : "hidden"} variants={containerVariants}>
-            {phases.map((phase, i) => (
-              <motion.div key={phase.step} className="group relative" variants={itemVariants}>
-                {i < phases.length - 1 && (
-                  <div className="hidden lg:block absolute top-24 left-full w-full h-1 bg-gradient-to-r from-cap-orange to-transparent" />
-                )}
-                <div className="bg-gradient-to-br from-card to-card/50 border border-border/30 p-8 rounded-lg h-full hover:border-cap-orange/40 transition-all duration-300 hover:shadow-lg hover:shadow-cap-orange/10">
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex-1">
-                      <div className="text-[52px] font-black text-cap-orange/30 leading-none mb-3">{phase.step}</div>
-                      <h3 className="text-[18px] font-bold mb-2 group-hover:text-cap-orange transition-colors">{phase.title}</h3>
-                    </div>
-                    <phase.icon className="w-8 h-8 text-cap-orange/40 group-hover:text-cap-orange group-hover:scale-110 transition-all" />
+    {/* Heading */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={phaseInView ? { opacity: 1, y: 0 } : {}}
+      ref={phaseRef}
+      className="mb-20 text-center max-w-3xl mx-auto"
+    >
+      <h2 className="text-[34px] md:text-[44px] font-bold mb-6 tracking-tight">
+        Our 4-Phase Approach
+      </h2>
+      <p className="text-[18px] text-muted-foreground leading-relaxed">
+        A structured methodology designed to ensure training leads to real behavioral transformation and measurable business outcomes.
+      </p>
+    </motion.div>
+
+    {/* Cards */}
+    <motion.div
+      className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative"
+      initial="hidden"
+      animate={phaseInView ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
+      {phases.map((phase, i) => (
+        <motion.div
+          key={phase.step}
+          className="group relative"
+          variants={itemVariants}
+        >
+
+          {/* Connector Line */}
+          {i < phases.length - 1 && (
+            <div className="hidden lg:block absolute top-20 left-full w-[80%] h-[2px] bg-gradient-to-r from-cap-orange/60 to-transparent" />
+          )}
+
+          {/* Card */}
+          <div className="relative h-full rounded-2xl p-[1px] bg-gradient-to-br from-cap-orange/30 to-transparent hover:from-cap-orange/60 transition-all duration-500">
+            <div className="bg-card/80 backdrop-blur-xl border border-border/30 rounded-2xl p-8 h-full flex flex-col justify-between hover:shadow-xl hover:shadow-cap-orange/10 transition-all duration-500">
+
+              {/* Top */}
+              <div className="flex items-start justify-between mb-6">
+
+                {/* Step + Title */}
+                <div>
+                  <div className="w-14 h-14 flex items-center justify-center rounded-xl bg-cap-orange/10 text-cap-orange font-bold text-lg mb-4 group-hover:scale-110 transition">
+                    {phase.step}
                   </div>
-                  <p className="text-[13px] text-muted-foreground leading-[1.6]">{phase.desc}</p>
+
+                  <h3 className="text-[18px] font-semibold group-hover:text-cap-orange transition-colors">
+                    {phase.title}
+                  </h3>
                 </div>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
+
+                {/* Icon */}
+                <div className="p-3 rounded-xl bg-cap-orange/10 group-hover:bg-cap-orange/20 transition">
+                  <phase.icon className="w-6 h-6 text-cap-orange group-hover:scale-110 transition-transform" />
+                </div>
+              </div>
+
+              {/* Description */}
+              <p className="text-[15px] text-muted-foreground leading-relaxed">
+                {phase.desc}
+              </p>
+
+              {/* Bottom Accent Line */}
+              <div className="mt-6 h-[2px] w-0 bg-cap-orange group-hover:w-full transition-all duration-500" />
+
+            </div>
+          </div>
+        </motion.div>
+      ))}
+    </motion.div>
+  </div>
+</section>
 
       {/* ── Program Streams ────────────────────────────────────────────────────── */}
       <section className="py-24 section-navy">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={programInView ? { opacity: 1, y: 0 } : {}} ref={programRef} className="mb-16">
             <h2 className="text-[32px] md:text-[42px] font-bold mb-6">Program Streams</h2>
-            <p className="text-[16px] text-muted-foreground max-w-2xl">Modular training organized into specialized streams, available standalone or as part of integrated organizational development.</p>
+            <p className="text-[18px] text-muted-foreground max-w-2xl">Modular training organized into specialized streams, available standalone or as part of integrated organizational development.</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -623,7 +672,7 @@ const TCB = () => {
                 <div className="flex items-start justify-between mb-4">
                   <div>
                     <h3 className="text-[18px] font-bold group-hover:text-cap-orange transition-colors">{program.title}</h3>
-                    <p className="text-[13px] text-muted-foreground mt-1">{program.modules} modules included</p>
+                    <p className="text-[15px] text-muted-foreground mt-1">{program.modules} modules included</p>
                   </div>
                   <program.icon className="w-10 h-10 text-cap-orange/40 group-hover:text-cap-orange group-hover:scale-110 transition-all" />
                 </div>
@@ -636,11 +685,11 @@ const TCB = () => {
 
       {/* ── Trending / Insights ────────────────────────────────────────────────── */}
       <section id="trending" className="py-24">
-        <div className="container mx-auto px-4 lg:px-8">
+        <div className="container mx-auto px-4 lg:px-6">
           <div className="flex items-center justify-between mb-12">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={trendingInView ? { opacity: 1, y: 0 } : {}} ref={trendingRef}>
               <h2 className="text-[32px] md:text-[42px] font-bold mb-2">Insights & Resources</h2>
-              <p className="text-[16px] text-muted-foreground">Stay updated with latest trends in corporate learning and transformation.</p>
+              <p className="text-[18px] text-muted-foreground">Stay updated with latest trends in corporate learning and transformation.</p>
             </motion.div>
             <div className="hidden md:flex gap-2">
               <button onClick={() => scrollTrending("left")} className="p-2 border border-border/40 text-foreground/60 hover:text-foreground hover:border-cap-orange/60 transition-all rounded-md hover:bg-cap-orange/5">
@@ -679,56 +728,90 @@ const TCB = () => {
       </section>
 
       {/* ── Meet Our Trainer ───────────────────────────────────────────────────── */}
-      <section id="founder" className="py-24 section-navy relative overflow-hidden">
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-cap-orange/5 rounded-full blur-3xl -z-0" />
-        <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={leadersInView ? { opacity: 1, y: 0 } : {}} ref={leadersRef} className="mb-16">
-            <h2 className="text-[32px] md:text-[42px] font-bold mb-2">Meet Our Trainer</h2>
-            <p className="text-[16px] text-muted-foreground">28+ years of corporate leadership combined with certified coaching expertise</p>
-          </motion.div>
+   <section id="founder" className="py-24 section-navy relative overflow-hidden">
+  <div className="absolute bottom-0 right-0 w-96 h-96 bg-cap-orange/5 rounded-full blur-3xl -z-0" />
 
-          <motion.div className="max-w-4xl" initial={{ opacity: 0, y: 30 }} animate={leadersInView ? { opacity: 1, y: 0 } : {}} transition={{ delay: 0.2 }}>
-            <div className="grid md:grid-cols-3 gap-8 items-center">
-              <div className="md:col-span-1">
-                <div className="w-full max-w-sm mx-auto aspect-square bg-gradient-to-br from-cap-orange/20 to-cap-blue/20 rounded-xl flex items-center justify-center text-[80px] font-black text-cap-orange border border-border/40">
-                  SM
-                </div>
-              </div>
-              <div className="md:col-span-2">
-                <h3 className="text-[28px] font-bold mb-2">Shivinder Mandhotra</h3>
-                <p className="text-cap-orange font-semibold text-[14px] mb-6 uppercase tracking-wider">Lead Trainer</p>
-                <div className="space-y-4 mb-8">
-                  <p className="text-[15px] text-muted-foreground leading-[1.8]">
-                    A rare combination of seasoned corporate leader and certified Power Coach, Shivinder brings 28+ years of hands-on experience across India's most respected organizations—Godrej & Boyce, Wipro, Amardeep Designs, and Intex Technologies.
-                  </p>
-                  <p className="text-[15px] text-muted-foreground leading-[1.8]">
-                    He's a proven turnaround specialist with expertise in transforming sales operations, managing complex implementations, and leading cross-functional teams to deliver exceptional results.
-                  </p>
-                </div>
-                <div className="grid sm:grid-cols-2 gap-4 mb-8">
-                  {[
-                    { title: "Power Coach Certified", sub: "Coaching & Leadership International Inc, Canada" },
-                    { title: "MBA Marketing", sub: "Symbiosis Institute, Pune" },
-                    { title: "Multiple Certifications", sub: "Executive Coach, Life Coach, PoSH Trainer" },
-                    { title: "Advisory Member", sub: "Administrator Chandigarh & Governor Punjab" },
-                  ].map((cred) => (
-                    <div key={cred.title} className="flex items-start gap-3">
-                      <CheckCircle2 className="w-5 h-5 text-cap-orange flex-shrink-0 mt-0.5" />
-                      <div>
-                        <p className="font-semibold text-[14px]">{cred.title}</p>
-                        <p className="text-[13px] text-muted-foreground">{cred.sub}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <button className="bg-cap-orange text-background px-6 py-3 font-semibold hover:bg-cap-orange/90 transition-all rounded-md inline-flex items-center gap-2">
-                  Schedule with Shivinder <ArrowRight className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          </motion.div>
+  <div className="w-full px-6 lg:px-16 xl:px-24 relative z-10">
+    
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={leadersInView ? { opacity: 1, y: 0 } : {}}
+      ref={leadersRef}
+      className="mb-16"
+    >
+      <h2 className="text-[32px] md:text-[42px] font-bold mb-2">
+        Meet Our Trainer
+      </h2>
+      <p className="text-[18px] text-muted-foreground">
+        28+ years of corporate leadership combined with certified coaching expertise
+      </p>
+    </motion.div>
+
+    <motion.div
+      className="max-w-8xl"
+      initial={{ opacity: 0, y: 30 }}
+      animate={leadersInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ delay: 0.2 }}
+    >
+      <div className="grid md:grid-cols-3 gap-8 items-center">
+
+        {/* IMAGE (your format) */}
+        <div className="md:col-span-1">
+          <div className="w-full max-w-sm mx-auto aspect-square rounded-xl overflow-hidden border border-border/40">
+            <img
+              src={card1}  // make sure card1 is imported or defined
+              alt="Shivinder Mandhotra"
+              className="object-cover w-full h-full"
+            />
+          </div>
         </div>
-      </section>
+
+        {/* CONTENT */}
+        <div className="md:col-span-2">
+          <h3 className="text-[28px] font-bold mb-2">
+            Shivinder Mandhotra
+          </h3>
+
+          <p className="text-cap-orange font-semibold text-[14px] mb-6 uppercase tracking-wider">
+            Lead Trainer
+          </p>
+
+          <div className="space-y-6 mb-8">
+            <p className="text-[17px] text-muted-foreground leading-[1.8]">
+              A rare combination of seasoned corporate leader and certified Power Coach, Shivinder brings 28+ years of hands-on experience across India's most respected organizations—Godrej & Boyce, Wipro, Amardeep Designs, and Intex Technologies.
+            </p>
+
+            <p className="text-[17px] text-muted-foreground leading-[1.8]">
+              He's a proven turnaround specialist with expertise in transforming sales operations, managing complex implementations, and leading cross-functional teams to deliver exceptional results.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            {[
+              { title: "Power Coach Certified", sub: "Coaching & Leadership International Inc, Canada" },
+              { title: "MBA Marketing", sub: "Symbiosis Institute, Pune" },
+              { title: "Multiple Certifications", sub: "Executive Coach, Life Coach, PoSH Trainer" },
+              { title: "Advisory Member", sub: "Administrator Chandigarh & Governor Punjab" },
+            ].map((cred) => (
+              <div key={cred.title} className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-cap-orange flex-shrink-0 mt-0.5" />
+                <div>
+                  <p className="font-semibold text-[14px]">{cred.title}</p>
+                  <p className="text-[15px] text-muted-foreground">{cred.sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <button className="bg-cap-orange text-background px-6 py-3 font-semibold hover:bg-cap-orange/90 transition-all rounded-md inline-flex items-center gap-2">
+            Schedule with Shivinder <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
+
+      </div>
+    </motion.div>
+  </div>
+</section>
 
       {/* ── CTA Section ────────────────────────────────────────────────────────── */}
       <section className="relative bg-gradient-to-r from-background via-background to-secondary overflow-hidden py-20">
@@ -761,7 +844,7 @@ const TCB = () => {
       </section>
 
       {/* ── Careers Section ────────────────────────────────────────────────────── */}
-      <section className="relative bg-black text-white overflow-hidden">
+      {/* <section className="relative bg-black text-white overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 800 600" fill="none">
             <circle cx="650" cy="150" r="120" stroke="white" />
@@ -784,7 +867,7 @@ const TCB = () => {
             Explore Open Positions
           </motion.button>
         </div>
-      </section>
+      </section> */}
 
       <Footer />
     </div>

@@ -44,7 +44,7 @@ const Footer = () => {
         <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 mb-16">
           <div className="col-span-2 lg:col-span-2">
             <img src={logo} alt="CAP360" className="h-10 mb-6" />
-            <p className="text-sm text-muted-foreground leading-relaxed mb-6">
+            <p className="font-medium text-muted-foreground leading-relaxed mb-6">
               CAP360 is a leading global professional services company helping
               the world's leading businesses, governments and organizations
               build their digital core.
@@ -81,7 +81,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-muted-foreground">
+          <p className="text-medium text-muted-foreground">
             © 2026 CAP360. All Rights Reserved.
           </p>
           <div className="flex gap-6">
