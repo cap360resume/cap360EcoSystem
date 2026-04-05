@@ -16,120 +16,88 @@ import {
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion, AnimatePresence } from "framer-motion";
-import Genai from "@/assets/Genai.png";
+import HR from "@/assets/HR.png";
 
-const GenAIHR = () => {
+const GenAIHR  = () => {
   const { ref: sRef, isInView: sInView } = useScrollAnimation(0.1);
   const { ref: bRef, isInView: bInView } = useScrollAnimation(0.1);
   const [activeIndex, setActiveIndex] = useState(null);
   const solutions = [
     {
       icon: Target,
-    title: "End-to-End Employee Lifecycle Management",
+     title: "AI Enablement for HR & Business Functions",
 content: (
   <>
     <p className="mb-4">
-      Every employee touchpoint matters — from onboarding to exit. We manage
-      the complete lifecycle to ensure consistency, compliance, and a smooth
-      employee experience.
+      We help organisations leverage AI responsibly to enhance operational
+      efficiency, improve decision-making, and reduce manual effort — without
+      unnecessary complexity or headcount expansion.
+    </p>
+
+    <p className="mb-4">
+      Our approach focuses on identifying practical, high-impact use cases
+      and building scalable AI frameworks that integrate seamlessly with
+      existing processes.
     </p>
 
     <ul className="space-y-3 mb-4 list-disc pl-5">
       <li>
-        <strong>Onboarding:</strong> Offer letters, documentation, induction,
-        and early-stage integration support.
+        <strong>AI use-case workshops:</strong> Identifying high-impact,
+        business-relevant AI opportunities.
       </li>
       <li>
-        <strong>Probation management:</strong> Structured reviews and
-        confirmation processes.
+        <strong>HR chatbot & knowledge frameworks:</strong> Automating
+        employee query resolution and HR support.
       </li>
       <li>
-        <strong>Role changes:</strong> Managing transfers and internal
-        movements with proper documentation.
+        <strong>Sales enablement AI:</strong> Enhancing pipeline visibility,
+        forecasting, and decision-making.
       </li>
       <li>
-        <strong>Exit management:</strong> Resignations, notice periods, exit
-        interviews, and full & final settlement.
+        <strong>Productivity optimisation:</strong> Driving efficiency and
+        output without increasing headcount.
       </li>
     </ul>
 
     <p>
-      The outcome is a seamless and well-governed employee lifecycle.
+      The outcome is focused AI adoption with measurable impact on efficiency,
+      productivity, and business performance.
     </p>
   </>
 ),
     },
     {
       icon: Target,
-     title: "PMS Administration",
+      title: "HR Chatbot Design & Knowledge Management Frameworks",
 content: (
   <>
     <p className="mb-4">
-      Running a performance cycle requires significant coordination. We
-      manage the entire PMS process to ensure timely execution and
-      consistency across the organisation.
+      HR teams spend significant time handling repetitive queries. An
+      AI-powered chatbot can resolve most of these instantly, improving
+      efficiency and employee experience.
     </p>
 
     <ul className="space-y-3 mb-4 list-disc pl-5">
       <li>
-        <strong>Goal tracking:</strong> Distribution and completion monitoring.
+        <strong>Chatbot architecture:</strong> Scope, flows, and integrations
+        across platforms like Teams, WhatsApp, or HRMS.
       </li>
       <li>
-        <strong>Review cycles:</strong> Mid-year and year-end coordination.
+        <strong>Knowledge frameworks:</strong> Structuring policies and FAQs
+        for accurate AI responses.
       </li>
       <li>
-        <strong>Calibration:</strong> Facilitating fair and consistent ratings.
-      </li>
-      <li>
-        <strong>Documentation:</strong> Ratings and outcome records.
-      </li>
-      <li>
-        <strong>Communication:</strong> Increment and bonus letter generation.
+        <strong>Governance protocols:</strong> Ensuring accuracy, updates, and
+        controlled responses.
       </li>
     </ul>
 
     <p>
-      The outcome is a smooth, structured, and efficient PMS cycle.
+      The outcome is faster query resolution and more efficient HR operations.
     </p>
   </>
 ),
     },
-    {
-      icon: Target,
-title: "Flexible Engagement Models",
-content: (
-  <>
-    <p className="mb-4">
-      Our Managed HR Services are designed to adapt to your growth stage
-      and internal HR capability, offering flexible engagement models.
-    </p>
-
-    <ul className="space-y-3 mb-4 list-disc pl-5">
-      <li>
-        <strong>Advisory Only:</strong> Framework design and guidance for
-        teams with in-house HR.
-      </li>
-      <li>
-        <strong>Advisory + Implementation:</strong> Design with structured
-        rollout support.
-      </li>
-      <li>
-        <strong>Retainer Model:</strong> Ongoing strategic HR advisory and
-        governance reviews.
-      </li>
-      <li>
-        <strong>HR Outsourcing:</strong> End-to-end HR operations management.
-      </li>
-    </ul>
-
-    <p>
-      A hybrid model is also available, allowing you to scale support as
-      your organisation grows.
-    </p>
-  </>
-),
-}
-
   ];
 
   const [index, setIndex] = useState(0);
@@ -197,7 +165,7 @@ content: (
           <span className="text-white font-medium">Customer Service</span>
           <span className="mx-2">/</span>
           <span className="text-gray-400">
-           Managed HR Services (Outsourced HR)
+            Gen AI for HR & Operational Productivity
           </span>
         </div>
 
@@ -211,7 +179,7 @@ content: (
             transition={{ duration: 0.6 }}
           >
             <img
-              src={Genai}
+              src={HR}
               alt="Office"
               className="w-full h-[420px] object-cover"
             />
@@ -225,11 +193,12 @@ content: (
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h1 className="text-[30px] md:text-[48px] lg:text-[54px] font-bold leading-[1.1] mb-6">
-             Managed HR Services (Outsourced HR)
+             Gen AI for HR & Operational Productivity
             </h1>
 
             <p className="text-lg text-gray-300 leading-relaxed">
-             Focus on your core business while we handle your entire HR operations — from payroll to compliance to employee experience — with enterprise-grade reliability.            </p>
+              Harness the power of generative AI to revolutionize HR operations, enhance employee experiences, and unlock unprecedented productivity gains.
+            </p>
           </motion.div>
         </div>
       </section>
@@ -244,7 +213,7 @@ content: (
             className="max-w-2xl"
           >
             <p className="text-lg leading-relaxed text-gray-200">
-             Managed HR Services provide a comprehensive solution for organisations looking to outsource their HR operations. By leveraging our expertise and technology, we help you streamline processes, ensure compliance, and enhance the overall employee experience — allowing you to focus on what matters most: your core business.            </p>
+Generative AI is reshaping how organisations think about productivity, HR operations, and workforce efficiency — and the pace of change is accelerating. For growing organisations, the opportunity lies in identifying where AI can meaningfully reduce effort, improve quality, and free up people for higher-value work. The key is moving from curiosity to clarity: knowing which use cases are worth pursuing, which tools are right for your context, and how to embed AI responsibly into the way your organisation works            </p>
           </motion.div>
 
           {/* RIGHT DATA CARD */}
