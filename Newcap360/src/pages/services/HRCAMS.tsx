@@ -18,6 +18,8 @@ import trending2 from "@/assets/trending-2.jpg";
 import trending3 from "@/assets/trending-3.jpg";
 import trending4 from "@/assets/trending-4.jpg";
 import card1 from "@/assets/card-1.jpg";
+import LabourLaw from "@/assets/labourlow.webp";
+import Performance from "@/assets/Performance.png";
 
 const serviceSubNav = [
   { label: "What to do", path: "#services" },
@@ -30,15 +32,15 @@ const serviceSubNav = [
 const trendingImages = [trending1, trending2, trending3, trending4];
 
 // Mosaic image cells — swap with your own assets if needed
-const mosaicImages = [trending1, trending2];
+const mosaicImages = [Performance, LabourLaw];
 
 const subServices = [
-  { icon: BarChart3, title: "Performance Management & Organisation Effectiveness", description: "Design and implement performance frameworks that align individual goals with organizational strategy, driving accountability and continuous improvement.", path: "/what-we-do/services/hrcams/performance-management" },
-  { icon: Settings, title: "Total Rewards Architecture", description: "Build competitive compensation, benefits, and recognition programmes that attract, retain, and motivate top talent across all levels.", path: "/what-we-do/services/hrcams/total-rewards" },
-  { icon: Shield, title: "Labour Law Compliance & HR Governance", description: "Ensure full compliance with evolving labour regulations while establishing robust HR governance frameworks and audit-ready processes.", path: "/what-we-do/services/hrcams/labour-law" },
-  { icon: Brain, title: "Gen AI for HR & Operational Productivity", description: "Leverage generative AI to automate HR workflows, enhance decision-making, and drive unprecedented operational efficiency.", path: "/what-we-do/services/hrcams/gen-ai-hr" },
-  { icon: Building2, title: "Organisation Design & Workforce Planning", description: "Architect agile organizational structures and workforce strategies that adapt to market dynamics and future business needs.", path: "/what-we-do/services/hrcams/org-design" },
-  { icon: Users, title: "Managed HR Services (Outsourced HR)", description: "End-to-end outsourced HR operations — payroll, compliance, employee lifecycle, and more — so you can focus on core business.", path: "/what-we-do/services/hrcams/managed-hr" },
+  { icon: BarChart3, title: "Performance Management & Organisation Effectiveness", title2:"Strengthening Organisational Capability Through Structured Frameworks", description: "Design and implement performance frameworks that align individual goals with organizational strategy, driving accountability and continuous improvement.", path: "/what-we-do/services/hrcams/performance-management" },
+  { icon: Settings, title: "Total Rewards Architecture",title2:"Aligning Compensation and Benefits with Business Goals and Workforce Expectations", description: "Build competitive compensation, benefits, and recognition programmes that attract, retain, and motivate top talent across all levels.", path: "/what-we-do/services/hrcams/total-rewards" },
+  { icon: Shield, title: "Labour Law Compliance & HR Governance", title2:"Ensuring Compliance and Effective HR Management", description: "Ensure full compliance with evolving labour regulations while establishing robust HR governance frameworks and audit-ready processes.", path: "/what-we-do/services/hrcams/labour-law" },
+  { icon: Brain, title: "Gen AI for HR & Operational Productivity", title2:"Leveraging Generative AI for HR Transformation", description: "Leverage generative AI to automate HR workflows, enhance decision-making, and drive unprecedented operational efficiency.", path: "/what-we-do/services/hrcams/gen-ai-hr" },
+  { icon: Building2, title: "Organisation Design & Workforce Planning", title2:"Building Agile Organizational Structures", description: "Architect agile organizational structures and workforce strategies that adapt to market dynamics and future business needs.", path: "/what-we-do/services/hrcams/org-design" },
+  { icon: Users, title: "Managed HR Services (Outsourced HR)", title2:"End-to-End Outsourced HR Operations", description: "End-to-end outsourced HR operations — payroll, compliance, employee lifecycle, and more — so you can focus on core business.", path: "/what-we-do/services/hrcams/managed-hr" },
 ];
 
 const trendingInsights = [
@@ -393,7 +395,7 @@ const phases = [
                       {/* Eyebrow */}
                       <div
                         style={{
-                          fontSize: "0.65rem",
+                          fontSize: "1rem",
                           fontWeight: 700,
                           letterSpacing: "0.08em",
                           textTransform: "uppercase",
@@ -409,7 +411,7 @@ const phases = [
                       <div
                         className="mosaic-title"
                         style={{
-                          fontSize: "1.05rem",
+                          fontSize: "1.0rem",
                           fontWeight: 700,
                           lineHeight: 1.3,
                           color: "hsl(var(--foreground))",
@@ -417,14 +419,14 @@ const phases = [
                           transition: "opacity 250ms ease",
                         }}
                       >
-                        {s.title}
+                        {s.title2}
                       </div>
 
                       {/* Description — shown on hover */}
                       <div
                         className="mosaic-desc"
                         style={{
-                          fontSize: "0.82rem",
+                          fontSize: "1rem",
                           fontWeight: 400,
                           lineHeight: 1.65,
                           color: "hsl(var(--muted-foreground))",
