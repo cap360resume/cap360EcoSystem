@@ -24,16 +24,16 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              TOGETHER WE
+              CAPABILITY BUILDING
               <br />
               <motion.span
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <span className="text-cap-blue">TRAN</span>
-                <span className="text-cap-orange">S</span>
-                <span className="text-cap-blue">FORM</span>
+                <span className="text-cap-blue"> </span>
+                <span className="text-cap-orange">ECO</span>
+                <span className="text-cap-blue">SYSTEM</span>
               </motion.span>
             </motion.h1>
           </div>
@@ -64,7 +64,7 @@ const HeroSection = () => {
               rules of growth, innovation and resilience.
             </motion.p>
             <motion.a
-              href="#services"
+              href="/what-we-do"
               className="cta-link text-lg"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}

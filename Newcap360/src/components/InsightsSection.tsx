@@ -74,7 +74,7 @@ const InsightsSection = () => {
                       {insight.title}
                     </h3>
                   </div>
-                  <a href="#" className="cta-link text-sm mt-6">
+                  <a href="/what-we-think" className="cta-link text-sm mt-6">
                     Read more
                     <ArrowRight className="w-4 h-4 text-cap-orange" />
                   </a>

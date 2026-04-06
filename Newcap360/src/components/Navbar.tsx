@@ -134,7 +134,7 @@ const Navbar = () => {
                 className={`relative px-5 py-6 text-lg font-medium transition-colors duration-200 flex items-center gap-1.5 ${
                   activeMenu === item.label
                     ? "text-gray-900"
-                    : "text-gray-500 hover:text-gray-800"
+                    : "text-black hover:text-gray-700"
                 }`}
                 onMouseEnter={() => handleMouseEnter(item.label)}
                 onClick={() => {

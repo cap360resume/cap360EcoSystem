@@ -355,8 +355,8 @@ const phases = [
                     "bg-cap-red", "bg-cap-dark-blue", "bg-cap-orange"
                   ];
                   const accentHex = [
-                    "#3b82f6", "#f97316", "#22c55e",
-                    "#ef4444", "#1e3a5f", "#f97316"
+                    "#f97316", "#f97316", "#f97316",
+                    "#f97316", "#f97316", "#f97316"
                   ];
 
                   return (
@@ -378,7 +378,7 @@ const phases = [
                         flexDirection: "column",
                         fontFamily: "inherit",
                         border: "1px solid hsl(var(--border) / 0.3)",
-                        transition: "background-color 400ms cubic-bezier(0.85,0,0,1), border-color 300ms ease",
+                        // transition: "background-color 400ms cubic-bezier(0.85,0,0,1), border-color 300ms ease",
                       }}
                     >
                       {/* Top color accent bar — uses your existing per-card color */}
@@ -488,11 +488,12 @@ const phases = [
                         style={{
                           position: "absolute",
                           inset: 0,
-                          opacity: 0,
+                          display: "none",
                           transition: "opacity 300ms ease",
                           background: `linear-gradient(135deg, ${accentHex[cell.index % accentHex.length]}18, transparent)`,
                           pointerEvents: "none",
                           zIndex: 0,
+                          
                         }}
                       />
                     </motion.div>

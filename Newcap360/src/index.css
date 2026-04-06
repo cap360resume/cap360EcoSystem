@@ -116,3 +116,20 @@
     @apply py-6 border-b border-border hover:bg-secondary/30 px-4 -mx-4 transition-colors cursor-pointer;
   }
 }
+/* In your global CSS or index.css */
+.mosaic-card:hover {
+  background: hsl(var(--card)) !important;
+  border-color: hsl(var(--border) / 0.3) !important;
+}
+
+.mosaic-card:hover .mosaic-overlay {
+  opacity: 0 !important;
+}
+
+.mosaic-card:hover .mosaic-title {
+  opacity: 0;
+}
+
+.mosaic-card:hover .mosaic-desc {
+  opacity: 1;
+}
