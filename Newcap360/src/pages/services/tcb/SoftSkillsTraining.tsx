@@ -1,0 +1,526 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import SubNavbar from "@/components/SubNavbar";
+import TCBSubNavbar from "@/components/TCBSubNavbar";
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  ArrowRight,
+  MessageSquare,
+  Users,
+  Handshake,
+  Mic,
+  Mail,
+  Globe,
+  Shield,
+  Zap,
+  Target,
+  CheckCircle2,
+} from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import { useRef, useState } from "react";
+import heroImg from "@/assets/heroImg.jpg";
+
+const programs = [
+  {
+    icon: MessageSquare,
+    tag: "COMMUNICATION",
+    title: "Business Communication",
+    subtitle: "Communicate with clarity, confidence, and impact.",
+    description:
+      "Master the full spectrum of professional communication — from boardroom presentations and structured emails to active listening and giving feedback. Equip your teams to convey ideas precisely, influence stakeholders, and represent your organisation with confidence in every interaction.",
+    format: "2 days",
+    mode: "Hybrid",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
+    outcomes: ["Executive presentations", "Email & written comms", "Active listening", "Feedback culture"],
+  },
+  {
+    icon: Users,
+    tag: "COLLABORATION",
+    title: "Team Collaboration",
+    subtitle: "Build trust, cohesion, and collective accountability.",
+    description:
+      "High-performing teams don't happen by accident. This programme builds the psychological safety, shared ownership, and collaborative habits that allow diverse teams to move faster, align better, and deliver consistently — whether in-person, hybrid, or fully remote.",
+    format: "2–3 days",
+    mode: "Hybrid",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
+    outcomes: ["Psychological safety", "Hybrid team dynamics", "Shared accountability", "Cross-functional work"],
+  },
+  {
+    icon: Handshake,
+    tag: "CONFLICT RESOLUTION",
+    title: "Conflict Resolution",
+    subtitle: "Turn tension into alignment and growth.",
+    description:
+      "Conflict is inevitable — how it's handled defines a culture. Equip employees and managers with structured frameworks to navigate disagreements constructively, mediate difficult conversations, de-escalate friction, and transform interpersonal tension into productive dialogue and shared outcomes.",
+    format: "2 days",
+    mode: "Hybrid",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
+    outcomes: ["Mediation techniques", "De-escalation tools", "Difficult conversations", "Conflict frameworks"],
+  },
+  {
+    icon: Mic,
+    tag: "PRESENTATION SKILLS",
+    title: "Presentation & Public Speaking",
+    subtitle: "Command any room with presence and persuasion.",
+    description:
+      "Whether addressing a team, a client, or a senior executive panel, this programme transforms nervous presenters into confident communicators. Learn story-structuring, visual storytelling, managing stage fright, handling Q&A sessions, and delivering data-driven narratives with authority.",
+    format: "1–2 days",
+    mode: "Hybrid",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
+    outcomes: ["Story structuring", "Executive presence", "Handling objections", "Visual storytelling"],
+  },
+  {
+    icon: Mail,
+    tag: "PROFESSIONAL WRITING",
+    title: "Professional Writing & Correspondence",
+    subtitle: "Write with precision, tone, and purpose.",
+    description:
+      "From business proposals and executive summaries to internal memos and client-facing reports — professional writing shapes perception. This programme hones grammar, tone, structure, and persuasion techniques so every written output is clear, credible, and audience-appropriate.",
+    format: "1–2 days",
+    mode: "Hybrid",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
+    outcomes: ["Business proposals", "Executive summaries", "Tone & voice", "Report writing"],
+  },
+  {
+    icon: Globe,
+    tag: "CROSS-CULTURAL",
+    title: "Cross-Cultural Communication",
+    subtitle: "Bridge differences. Build global collaboration.",
+    description:
+      "In today's interconnected workplace, cultural intelligence is a professional essential. Learn to adapt communication styles across cultures, avoid unconscious bias, build inclusive team environments, and strengthen relationships with international clients, partners, and colleagues.",
+    format: "1–2 days",
+    mode: "Hybrid",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
+    outcomes: ["Cultural intelligence", "Inclusive communication", "Global client relations", "Bias awareness"],
+  },
+];
+
+const stats = [
+  { value: "88%", label: "Participant Satisfaction" },
+  { value: "2.8x", label: "ROI on Soft Skills Investment" },
+  { value: "40%", label: "Improvement in Team Collaboration" },
+  { value: "55%", label: "Reduction in Workplace Conflict" },
+];
+
+const ProgramCard = ({ program, index }) => {
+  const [hovered, setHovered] = useState(false);
+  const { ref, isInView } = useScrollAnimation(0.1);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ delay: index * 0.08, duration: 0.5 }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      className="relative group"
+    >
+      <div
+        className={`relative overflow-hidden border transition-all duration-500 h-full
+          ${hovered
+            ? "border-transparent shadow-2xl -translate-y-1"
+            : "border-border/20"
+          }
+        `}
+        style={{
+          background: hovered
+            ? `linear-gradient(135deg, ${program.accent}18 0%, ${program.accent}08 100%)`
+            : "hsl(var(--card))",
+        }}
+      >
+        {/* top accent bar */}
+        <div
+          className="h-[3px] w-full transition-all duration-500"
+          style={{
+            background: hovered
+              ? `linear-gradient(90deg, ${program.accent}, transparent)`
+              : "transparent",
+          }}
+        />
+
+        <div className="p-8">
+          {/* Tag + Icon row */}
+          <div className="flex items-start justify-between mb-6">
+            <span
+              className="text-[10px] font-black tracking-[0.2em] px-3 py-1.5"
+              style={{
+                color: program.accent,
+                backgroundColor: `${program.accent}18`,
+              }}
+            >
+              {program.tag}
+            </span>
+            <div
+              className="w-12 h-12 flex items-center justify-center transition-all duration-300"
+              style={{
+                backgroundColor: `${program.accent}15`,
+                transform: hovered ? "scale(1.1) rotate(5deg)" : "scale(1)",
+              }}
+            >
+              <program.icon
+                className="w-6 h-6"
+                style={{ color: program.accent }}
+              />
+            </div>
+          </div>
+
+          <h3 className="text-[20px] font-black leading-tight mb-2 tracking-tight">
+            {program.title}
+          </h3>
+          <p
+            className="text-[15px] font-semibold mb-4"
+            style={{ color: program.accent }}
+          >
+            {program.subtitle}
+          </p>
+          <p className="text-[15px] text-muted-foreground leading-[1.7] mb-6">
+            {program.description}
+          </p>
+
+          {/* Outcome pills */}
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {program.outcomes.map((o) => (
+              <span
+                key={o}
+                className="inline-flex items-center gap-1 text-[11px] font-semibold px-2.5 py-1 border border-border/20 text-muted-foreground"
+              >
+                <CheckCircle2 className="w-3 h-3" style={{ color: program.accent }} />
+                {o}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+const SoftSkillsTraining = () => {
+  const { ref, isInView } = useScrollAnimation(0.1);
+  const { ref: impactRef, isInView: impactInView } = useScrollAnimation(0.1);
+  const { ref: principlesRef, isInView: principlesInView } = useScrollAnimation(0.1);
+  const heroRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
+  const heroY = useTransform(scrollYProgress, [0, 1], [0, 80]);
+  const heroOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+
+  return (
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <SubNavbar
+        title="Services"
+        titlePath="/what-we-do"
+        items={[
+          { label: "ASER", path: "/what-we-do/services/aser" },
+          { label: "HRCAMS", path: "/what-we-do/services/hrcams" },
+          { label: "TCB", path: "/what-we-do/services/tcb" },
+          { label: "PACE", path: "/what-we-do/services/pace" },
+        ]}
+      />
+      <TCBSubNavbar />
+
+      {/* ─── HERO ─── */}
+      <section ref={heroRef} className="relative min-h-[70vh] flex items-center overflow-hidden">
+        <motion.div style={{ y: heroY }} className="absolute inset-0">
+          <img
+            src={heroImg}
+            alt=""
+            /* LIGHTER overlay: opacity-70 instead of opacity-50, and lighter gradient */
+            className="w-full h-full object-cover opacity-70"
+          />
+        </motion.div>
+        {/* Lightened overlay — from-background/80 instead of /95 so the image breathes */}
+        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-background/50 to-background/10" />
+
+        {/* decorative vertical line */}
+        <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-cap-orange to-transparent opacity-60" />
+
+        <motion.div
+          style={{ opacity: heroOpacity }}
+          className="relative container mx-auto px-4 lg:px-8 py-32"
+        >
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.1 }}
+            className="flex items-center gap-3 mb-6"
+          >
+            <div className="h-[1px] w-8 bg-cap-orange" />
+            <span className="text-[15px] font-black tracking-[0.25em] text-cap-orange uppercase">
+              TCB · Soft Skills Training
+            </span>
+          </motion.div>
+
+          <motion.h1
+            className="text-[32px] md:text-[40px] lg:text-[60px] font-black tracking-tight leading-[1.0] mb-6 max-w-4xl"
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
+          >
+            People Skills{" "}
+            <span className="relative inline-block">
+              Drive
+              <span className="absolute bottom-1 left-0 right-0 h-[4px] bg-cap-orange opacity-70" />
+            </span>
+            <br />
+            Business Results.
+          </motion.h1>
+
+          <motion.p
+            className="text-[20px] md:text-[20px] text-foreground/85 leading-[1.75] max-w-2xl mb-10 font-normal"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4 }}
+          >
+            Communication, collaboration, and conflict resolution aren't soft — they're the hardest skills to master and the most critical to your organisation's success.{" "}
+            <strong className="text-foreground font-bold">We build cohesive, connected workforces.</strong>
+          </motion.p>
+
+          <motion.div
+            className="flex flex-wrap gap-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.55 }}
+          >
+            {["6 Programmes", "Hybrid Format", "All Levels", "CPD Certified"].map((tag) => (
+              <span
+                key={tag}
+                className="text-[15px] font-bold tracking-wide border border-border/30 px-4 py-2 text-muted-foreground"
+              >
+                {tag}
+              </span>
+            ))}
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ─── PHILOSOPHY BAND ─── */}
+      <section ref={principlesRef} className="py-20 border-y border-border/20 overflow-hidden">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="grid md:grid-cols-3 gap-0 divide-y md:divide-y-0 md:divide-x divide-border/20">
+            {[
+              {
+                icon: Shield,
+                title: "Human-Centred",
+                body: "Every interaction shapes culture. We build skills rooted in empathy, respect, and authentic connection — not scripts or surface-level technique.",
+              },
+              {
+                icon: Zap,
+                title: "Immediately Applicable",
+                body: "No theory overload. Each programme is built around real workplace scenarios so participants leave with tools they can apply the very next day.",
+              },
+              {
+                icon: Target,
+                title: "Organisation-Wide Impact",
+                body: "From front-line employees to senior managers, we develop communication and collaboration capability at every level — creating lasting cultural change.",
+              },
+            ].map(({ icon: Icon, title, body }, i) => (
+              <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 20 }}
+                animate={principlesInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: i * 0.15 }}
+                className="px-10 py-10 first:pl-0 last:pr-0"
+              >
+                <Icon className="w-9 h-9 text-cap-orange mb-4" />
+                <h3 className="text-[17px] font-black tracking-tight mb-3">{title}</h3>
+                <p className="text-[16px] text-muted-foreground leading-[1.7]">{body}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── PROGRAMMES GRID ─── */}
+      <section className="py-24" ref={ref}>
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div>
+              <motion.p
+                className="text-[15px] font-black tracking-[0.2em] text-cap-orange uppercase mb-3"
+                initial={{ opacity: 0 }}
+                animate={isInView ? { opacity: 1 } : {}}
+              >
+                Our Programmes
+              </motion.p>
+              <motion.h2
+                className="text-[32px] md:text-[44px] font-black leading-tight tracking-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.1 }}
+              >
+                Six Programmes.
+                <br />
+                <span className="text-muted-foreground font-normal">One Goal: A Cohesive Workforce.</span>
+              </motion.h2>
+            </div>
+            <motion.p
+              className="text-[14px] text-muted-foreground max-w-sm leading-[1.7]"
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.2 }}
+            >
+              Each programme addresses a distinct gap in interpersonal effectiveness — choose the one your team needs most, or build a complete communication curriculum.
+            </motion.p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {programs.map((program, i) => (
+              <ProgramCard key={program.title} program={program} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── IMPACT STATS ─── */}
+      <section className="py-24 section-navy relative overflow-hidden" ref={impactRef}>
+        {/* decorative grid */}
+        <div
+          className="absolute inset-0 opacity-5"
+          style={{
+            backgroundImage:
+              "linear-gradient(hsl(var(--border)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--border)) 1px, transparent 1px)",
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        <div className="relative container mx-auto px-4 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <motion.p
+                className="text-[30px] font-black tracking-[0.2em] text-cap-orange uppercase mb-4"
+                initial={{ opacity: 0 }}
+                animate={impactInView ? { opacity: 1 } : {}}
+              >
+                Measurable Results
+              </motion.p>
+              <motion.h2
+                className="text-[32px] md:text-[44px] font-black leading-tight tracking-tight mb-6"
+                initial={{ opacity: 0, y: 20 }}
+                animate={impactInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ delay: 0.1 }}
+              >
+                Soft skills investment
+                <br />
+                <span className="text-cap-orange">that pays back.</span>
+              </motion.h2>
+              <motion.p
+                className="text-[15px] text-muted-foreground leading-[1.8] max-w-md"
+                initial={{ opacity: 0 }}
+                animate={impactInView ? { opacity: 1 } : {}}
+                transition={{ delay: 0.2 }}
+              >
+                Organisations that invest in communication and collaboration training see measurable gains in team performance, employee retention, and customer satisfaction. These aren't just feel-good numbers — they're boardroom outcomes.
+              </motion.p>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {stats.map((stat, i) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, scale: 0.85 }}
+                  animate={impactInView ? { opacity: 1, scale: 1 } : {}}
+                  transition={{ delay: 0.1 * i, type: "spring", stiffness: 200 }}
+                  className="bg-card/40 border border-border/20 p-7 group hover:border-cap-orange/30 transition-all duration-300"
+                >
+                  <div className="text-[40px] font-black text-cap-orange leading-none mb-3">
+                    {stat.value}
+                  </div>
+                  <div className="text-[15px] font-semibold tracking-wide text-muted-foreground uppercase">
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── CTA ─── */}
+      <section className="py-24 bg-white relative overflow-hidden border-t border-border/10">
+        {/* large decorative orange circle */}
+        <div
+          className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full opacity-[0.07]"
+          style={{ background: "radial-gradient(circle, #FF6B35 0%, transparent 70%)" }}
+        />
+        <div
+          className="absolute -left-20 -bottom-20 w-[300px] h-[300px] rounded-full opacity-[0.05]"
+          style={{ background: "radial-gradient(circle, #FF6B35 0%, transparent 70%)" }}
+        />
+        {/* top accent line */}
+        <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-cap-orange via-amber-400 to-cap-orange" />
+
+        <div className="relative container mx-auto px-4">
+          <div className="max-w-4xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+            {/* left text */}
+            <div className="flex-1 text-center lg:text-left">
+              <motion.div
+                className="inline-flex items-center gap-2 mb-5"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                <div className="h-[2px] w-6 bg-cap-orange" />
+                <span className="text-[10px] font-black tracking-[0.25em] text-cap-orange uppercase">
+                  Next Step
+                </span>
+              </motion.div>
+              <motion.h2
+                className="text-[30px] md:text-[42px] font-black text-gray-900 mb-4 tracking-tight leading-[1.1]"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+              >
+                Ready to build a more{" "}
+                <span className="text-cap-orange">connected workforce?</span>
+              </motion.h2>
+              <motion.p
+                className="text-gray-500 text-[16px] leading-[1.8] max-w-md mx-auto lg:mx-0"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.15 }}
+              >
+                Let's discuss which soft skills programme best fits your organisation's culture, challenges, and goals. Our learning consultants are ready to help.
+              </motion.p>
+            </div>
+
+            {/* right CTA box */}
+            <motion.div
+              className="flex-shrink-0 bg-cap-orange p-10 text-center min-w-[260px]"
+              initial={{ opacity: 0, scale: 0.92 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, type: "spring", stiffness: 180 }}
+            >
+              <div className="text-white/80 text-[12px] font-bold tracking-widest uppercase mb-3">
+                6 Programmes
+              </div>
+              <div className="text-white text-[40px] font-black leading-none mb-1">All</div>
+              <div className="text-white/90 text-[15px] font-semibold mb-6">levels covered</div>
+              <motion.a
+                href="#"
+                className="inline-flex items-center gap-2 bg-white text-cap-orange px-7 py-3.5 text-[15px] font-black tracking-wide w-full justify-center hover:gap-4 transition-all duration-300"
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                Get Started <ArrowRight className="w-4 h-4" />
+              </motion.a>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+};
+
+export default SoftSkillsTraining;

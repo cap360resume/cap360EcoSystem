@@ -13,10 +13,14 @@ import {
   Heart,
   Cog,
   Cpu,
+  Shuffle,
+  UserCheck,
+  GitBranch,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion, AnimatePresence } from "framer-motion";
 import Genai from "@/assets/Genai.png";
+import org from "@/assets/org.png";
 
 const GenAIHR = () => {
   const { ref: sRef, isInView: sInView } = useScrollAnimation(0.1);
@@ -170,30 +174,30 @@ content: (
 
   const cards = [
     {
-      icon: <Heart className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Enhanced satisfaction",
-      desc: "Achieve higher customer loyalty and a positive brand reputation through proactive customer service and efficient issue resolution.",
-    },
-    {
-      icon: <Cog className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Operational efficiency",
-      desc: "Reduce response times and operational costs, ensuring optimal resource utilization and increased business productivity.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Skilled workforce",
-      desc: "Equip agents with the right tools, insights and capabilities to deliver exceptional customer experiences consistently.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "AI-driven insights",
-      desc: "Leverage AI-powered analytics to improve decision-making and customer engagement.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Scalable operations",
-      desc: "Build systems and processes that scale seamlessly as your business grows.",
-    },
+  icon: <GitBranch className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Structured organisation design",
+  desc: "Design scalable organisation structures aligned to business strategy, eliminating inefficiencies and enabling clear reporting and accountability.",
+},
+{
+  icon: <Users className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Role clarity & accountability",
+  desc: "Define clear job roles, responsibilities, and decision rights to reduce overlap, improve collaboration, and eliminate ambiguity across teams.",
+},
+{
+  icon: <BarChart3 className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Data-driven workforce planning",
+  desc: "Leverage productivity benchmarks and staffing models to make informed headcount decisions and optimise resource allocation.",
+},
+{
+  icon: <UserCheck className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Leadership pipeline & succession",
+  desc: "Build a strong leadership bench with structured succession planning frameworks that reduce dependency on critical individuals.",
+},
+{
+  icon: <Shuffle className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Seamless M&A integration",
+  desc: "Ensure smooth organisational transitions during mergers and acquisitions through structured integration planning, cultural alignment, and role harmonisation.",
+},
   ];
 
   const visibleCards = 3;
@@ -306,7 +310,7 @@ content: (
             <div className="text-[64px] font-bold mb-6">64%</div>
 
             <p className="text-gray-200 leading-relaxed">
-             Our Organisation Design & Workforce Planning service is focused on exactly this — helping you build the structural foundation your next phase of growth requires. Not simply adding headcount, but thoughtfully designing how work gets done, who owns what, and how your organisation can scale with clarity and efficiency.
+             of organisations struggle with unclear roles and inefficient structures as they scale, impacting productivity and decision-making.
             </p>
           </motion.div>
         </div>
@@ -320,8 +324,8 @@ content: (
           {/* HEADING */}
           <div className="mb-16">
             <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.1]">
-              How vision, strategy and <br />
-              implementation is changing
+             How vision, strategy and execution are <br /> redefining organisation design 
+              
             </h2>
           </div>
 
@@ -330,7 +334,7 @@ content: (
             {/* LEFT IMAGE */}
             <div>
               <img
-                src="/image2.jpg"
+                src={org}
                 alt="AI Experience"
                 className="w-full h-[420px] object-cover"
               />
@@ -341,13 +345,11 @@ content: (
               <div className="w-10 h-[3px] bg-purple-500 mb-6"></div>
 
               <h3 className="text-lg md:text-xl font-semibold mb-6">
-                Implement a service strategy powered by AI
+               Build structures that scale with growth
               </h3>
 
               <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                Generative AI is transforming customer service from reactive
-                support to proactive engagement. By enabling smarter, contextual
-                interactions across the customer journey...
+                As organisations grow, informal structures create confusion, duplication, and inefficiency. By designing clear organisation structures, defining roles and accountability, and implementing data-backed workforce planning, businesses can scale with clarity, agility, and operational efficiency...
               </p>
             </div>
           </div>

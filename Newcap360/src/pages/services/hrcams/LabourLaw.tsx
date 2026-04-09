@@ -13,6 +13,8 @@ import {
   Heart,
   Cog,
   Cpu,
+  FileText,
+  ShieldCheck,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -279,30 +281,30 @@ const LabourLaw = () => {
 
   const cards = [
     {
-      icon: <Heart className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Enhanced satisfaction",
-      desc: "Achieve higher customer loyalty and a positive brand reputation through proactive customer service and efficient issue resolution.",
-    },
-    {
-      icon: <Cog className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Operational efficiency",
-      desc: "Reduce response times and operational costs, ensuring optimal resource utilization and increased business productivity.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Skilled workforce",
-      desc: "Equip agents with the right tools, insights and capabilities to deliver exceptional customer experiences consistently.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "AI-driven insights",
-      desc: "Leverage AI-powered analytics to improve decision-making and customer engagement.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Scalable operations",
-      desc: "Build systems and processes that scale seamlessly as your business grows.",
-    },
+  icon: <ShieldCheck className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Stronger compliance & risk protection",
+  desc: "Ensure full adherence to labour laws through structured audits, accurate documentation, and proactive compliance frameworks that minimize legal and regulatory risks.",
+},
+{
+  icon: <Cog className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Operational governance efficiency",
+  desc: "Streamline HR processes with standardized policies, clear approval structures, and governance mechanisms that drive consistency and reduce operational gaps.",
+},
+{
+  icon: <Users className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Accountable & compliant workforce",
+  desc: "Build awareness and accountability across the organisation through POSH frameworks, policy clarity, and structured compliance practices.",
+},
+{
+  icon: <FileText className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Audit-ready documentation",
+  desc: "Establish legally sound, standardized HR documentation and records that ensure readiness for audits, inspections, and investor due diligence.",
+},
+{
+  icon: <BarChart3 className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Governance & compliance insights",
+  desc: "Leverage HR dashboards and compliance tracking systems to monitor risks, ensure transparency, and support board-level decision-making.",
+},
   ];
 
   const visibleCards = 3;
@@ -415,12 +417,10 @@ const LabourLaw = () => {
               DATA
             </div>
 
-            <div className="text-[64px] font-bold mb-6">64%</div>
+            <div className="text-[64px] font-bold mb-6">72%</div>
 
             <p className="text-gray-200 leading-relaxed">
-              of executives are actively making trade-offs between cost
-              efficiency and customer satisfaction, highlighting the importance
-              of balancing these factors.
+              of growing organisations face compliance gaps due to evolving labour laws and inadequate HR governance frameworks, increasing regulatory and legal risks..
             </p>
           </motion.div>
         </div>
@@ -434,8 +434,8 @@ const LabourLaw = () => {
           {/* HEADING */}
           <div className="mb-16">
             <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.1]">
-              How vision, strategy and <br />
-              implementation is changing
+              How vision, strategy and implementation are transforming <br /> HR Compliance & Governance 
+              
             </h2>
           </div>
 
@@ -455,13 +455,11 @@ const LabourLaw = () => {
               <div className="w-10 h-[3px] bg-purple-500 mb-6"></div>
 
               <h3 className="text-lg md:text-xl font-semibold mb-6">
-                Implement a service strategy powered by AI
+                Build a compliance-first, audit-ready organisation
               </h3>
 
               <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                Generative AI is transforming customer service from reactive
-                support to proactive engagement. By enabling smarter, contextual
-                interactions across the customer journey...
+                As regulatory complexity increases, organisations must move from reactive compliance to proactive governance. By integrating structured audits, policy frameworks, POSH compliance, and real-time monitoring systems, businesses can reduce risk, ensure legal adherence, and build a strong foundation for scalable growth....
               </p>
             </div>
           </div>
@@ -535,54 +533,65 @@ const LabourLaw = () => {
 
       {/* =====  What you’ll achieve ===== */}
 
-      <section className="bg-black text-white py-20 md:py-24 px-6 lg:px-16">
-        <div className="max-w-7xl mx-auto">
-          {/* Heading */}
-          <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold mb-12">
-            What you’ll achieve
-          </h2>
+     
+  <section className="bg-black text-white py-20 md:py-24 px-6 lg:px-16">
+  <div className="max-w-7xl mx-auto">
+    
+    {/* Heading */}
+    <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold mb-12">
+      What you’ll achieve
+    </h2>
 
-          {/* Slider Wrapper */}
-          <div className="overflow-hidden">
-            <motion.div
-              className="flex gap-10"
-              animate={{ x: `-${index * (100 / visibleCards)}%` }}
-              transition={{ duration: 0.5 }}
-            >
-              {cards.map((card, i) => (
-                <div key={i} className="min-w-[calc(100%/3)] max-w-sm">
-                  {card.icon}
+    {/* Slider Wrapper */}
+    <div className="overflow-hidden">
+      <motion.div
+        className="flex gap-9"
+        animate={{ x: `-${index * (100 / visibleCards)}%` }}
+        transition={{ duration: 0.5 }}
+      >
+        {/* 🔥 LOOP FIX (duplicate cards) */}
+        {[...cards, ...cards].map((card, i) => (
+          <div
+            key={i}
+            className="w-full md:w-1/2 lg:w-1/3 flex-shrink-0"
+          >
+            {card.icon}
 
-                  <h3 className="text-lg md:text-xl font-semibold mb-3">
-                    {card.title}
-                  </h3>
+            <h3 className="text-lg md:text-xl font-semibold mb-3">
+              {card.title}
+            </h3>
 
-                  <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                    {card.desc}
-                  </p>
-                </div>
-              ))}
-            </motion.div>
+            <p className="text-base md:text-lg text-gray-300 leading-relaxed break-words">
+              {card.desc}
+            </p>
           </div>
+        ))}
+      </motion.div>
+    </div>
 
-          {/* Navigation */}
-          <div className="flex justify-end gap-4 mt-12">
-            <button
-              onClick={prev}
-              className="w-12 h-12 bg-gray-900 flex items-center justify-center hover:bg-gray-800 transition"
-            >
-              ←
-            </button>
+    {/* Navigation */}
+    <div className="flex justify-end gap-4 mt-12">
+      <button
+        onClick={() =>
+          setIndex((prev) => (prev - 1 + cards.length) % cards.length)
+        }
+        className="w-12 h-12 bg-gray-900 flex items-center justify-center hover:bg-gray-800 transition"
+      >
+        ←
+      </button>
 
-            <button
-              onClick={next}
-              className="w-12 h-12 bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition"
-            >
-              →
-            </button>
-          </div>
-        </div>
-      </section>
+      <button
+        onClick={() =>
+          setIndex((prev) => (prev + 1) % cards.length)
+        }
+        className="w-12 h-12 bg-gray-800 flex items-center justify-center hover:bg-gray-700 transition"
+      >
+        →
+      </button>
+    </div>
+
+  </div>
+</section>
 
       {/* =====  Transform your performance culture ===== */}
 

@@ -5,18 +5,18 @@ import SubNavbar from "@/components/SubNavbar";
 import HRCAMSSubNavbar from "@/components/HRCAMSSubNavbar";
 import {
   ArrowRight,
-  CheckCircle,
   BarChart3,
   Target,
-  TrendingUp,
-  Users,
-  Heart,
-  Cog,
-  Cpu,
+  Sliders,
+  ShieldCheck,
+  ClipboardList,
+  UserCheck,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion, AnimatePresence } from "framer-motion";
 import Genai from "@/assets/Genai.png";
+import hrservices from "@/assets/hrservices.jpg";
+
 
 const ManagedHR = () => {
   const { ref: sRef, isInView: sInView } = useScrollAnimation(0.1);
@@ -136,30 +136,30 @@ content: (
 
   const cards = [
     {
-      icon: <Heart className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Enhanced satisfaction",
-      desc: "Achieve higher customer loyalty and a positive brand reputation through proactive customer service and efficient issue resolution.",
-    },
-    {
-      icon: <Cog className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Operational efficiency",
-      desc: "Reduce response times and operational costs, ensuring optimal resource utilization and increased business productivity.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Skilled workforce",
-      desc: "Equip agents with the right tools, insights and capabilities to deliver exceptional customer experiences consistently.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "AI-driven insights",
-      desc: "Leverage AI-powered analytics to improve decision-making and customer engagement.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Scalable operations",
-      desc: "Build systems and processes that scale seamlessly as your business grows.",
-    },
+  icon: <UserCheck className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "End-to-end employee lifecycle management",
+  desc: "Manage the complete employee journey—from onboarding to exit—with structured processes, documentation, and consistent employee experience.",
+},
+{
+  icon: <ClipboardList className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Seamless PMS administration",
+  desc: "Ensure smooth execution of performance cycles through goal tracking, review coordination, calibration support, and outcome documentation.",
+},
+{
+  icon: <ShieldCheck className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Proactive compliance & policy management",
+  desc: "Monitor statutory compliance, manage policy updates, and ensure adherence to labour laws through structured, ongoing governance.",
+},
+{
+  icon: <BarChart3 className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Governance reporting & insights",
+  desc: "Provide leadership with structured HR dashboards covering headcount, attrition, compliance status, and workforce trends for better decision-making.",
+},
+{
+  icon: <Sliders className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Flexible & scalable HR support",
+  desc: "Access tailored HR engagement models—from advisory to fully managed outsourcing—designed to scale with your business needs.",
+},
   ];
 
   const visibleCards = 3;
@@ -258,12 +258,10 @@ content: (
               DATA
             </div>
 
-            <div className="text-[64px] font-bold mb-6">64%</div>
+            <div className="text-[64px] font-bold mb-6">68%</div>
 
             <p className="text-gray-200 leading-relaxed">
-              of executives are actively making trade-offs between cost
-              efficiency and customer satisfaction, highlighting the importance
-              of balancing these factors.
+              of growing organisations operate without structured HR systems, leading to inconsistent processes, compliance risks, and poor employee experience.
             </p>
           </motion.div>
         </div>
@@ -277,17 +275,17 @@ content: (
           {/* HEADING */}
           <div className="mb-16">
             <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.1]">
-              How vision, strategy and <br />
-              implementation is changing
+              How vision, strategy and implementation are transforming <br /> HR operations
+              
             </h2>
           </div>
 
           {/* CONTENT */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* LEFT IMAGE */}
             <div>
               <img
-                src="/image2.jpg"
+                src={hrservices}
                 alt="AI Experience"
                 className="w-full h-[420px] object-cover"
               />
@@ -295,16 +293,14 @@ content: (
 
             {/* RIGHT TEXT */}
             <div className="max-w-md ml-auto">
-              <div className="w-10 h-[3px] bg-purple-500 mb-6"></div>
+              <div className="w-15 h-[3px] bg-purple-500 mb-6"></div>
 
               <h3 className="text-lg md:text-xl font-semibold mb-6">
-                Implement a service strategy powered by AI
+                Move from informal HR to structured people management
               </h3>
 
               <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                Generative AI is transforming customer service from reactive
-                support to proactive engagement. By enabling smarter, contextual
-                interactions across the customer journey...
+                As organisations grow, managing HR informally creates inconsistencies, compliance risks, and inefficiencies. By implementing managed HR services, businesses can establish structured processes, ensure compliance, and improve employee experience—without the cost of building a full in-house HR function....
               </p>
             </div>
           </div>

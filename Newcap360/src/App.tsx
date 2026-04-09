@@ -21,11 +21,11 @@ import OrgDesign from "./pages/services/hrcams/OrgDesign.tsx";
 import ManagedHR from "./pages/services/hrcams/ManagedHR.tsx";
 // TCB sub-pages
 import LeadershipDevelopment from "./pages/services/tcb/LeadershipDevelopment.tsx";
-import DigitalUpskilling from "./pages/services/tcb/DigitalUpskilling.tsx";
-import TeamEffectiveness from "./pages/services/tcb/TeamEffectiveness.tsx";
 import InnovationDesignThinking from "./pages/services/tcb/InnovationDesignThinking.tsx";
+import SoftSkillsTraining from "./pages/services/tcb/SoftSkillsTraining.tsx";
+import SalesCustomerExcellence from "./pages/services/tcb/SalesCustomerExcellence.tsx";
 import LearningExperienceDesign from "./pages/services/tcb/LearningExperienceDesign.tsx";
-import CertificationCompliance from "./pages/services/tcb/CertificationCompliance.tsx";
+import BehavioralMindsetTraining from "./pages/services/tcb/BehavioralMindsetTraining.tsx";
 // ASER sub-pages
 import CompetencyAssessments from "./pages/services/aser/CompetencyAssessments.tsx";
 import AssessmentCentres from "./pages/services/aser/AssessmentCentres.tsx";
@@ -68,11 +68,11 @@ const App = () => (
           <Route path="/what-we-do/services/hrcams/managed-hr" element={<ManagedHR />} />
           {/* TCB sub-pages */}
           <Route path="/what-we-do/services/tcb/leadership-development" element={<LeadershipDevelopment />} />
-          <Route path="/what-we-do/services/tcb/digital-upskilling" element={<DigitalUpskilling />} />
-          <Route path="/what-we-do/services/tcb/team-effectiveness" element={<TeamEffectiveness />} />
-          <Route path="/what-we-do/services/tcb/innovation-design-thinking" element={<InnovationDesignThinking />} />
+          <Route path="/what-we-do/services/tcb/digital-upskilling" element={<InnovationDesignThinking />} />
+          <Route path="/what-we-do/services/tcb/soft-skills-training" element={<SoftSkillsTraining />} />
+          <Route path="/what-we-do/services/tcb/sales-customer-excellence" element={<SalesCustomerExcellence />} />
           <Route path="/what-we-do/services/tcb/learning-experience-design" element={<LearningExperienceDesign />} />
-          <Route path="/what-we-do/services/tcb/certification-compliance" element={<CertificationCompliance />} />
+          <Route path="/what-we-do/services/tcb/behavioral-mindset-training" element={<BehavioralMindsetTraining />} />
           {/* ASER sub-pages */}
           <Route path="/what-we-do/services/aser/competency-assessments" element={<CompetencyAssessments />} />
           <Route path="/what-we-do/services/aser/assessment-centres" element={<AssessmentCentres />} />

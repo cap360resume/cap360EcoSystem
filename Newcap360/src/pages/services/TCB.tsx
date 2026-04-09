@@ -23,7 +23,7 @@ import {
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useRef, useState } from "react";
-import heroImg from "@/assets/service-hero-tcb.jpg";
+import heroImg from "@/assets/heroImg.jpg";
 import trending1 from "@/assets/trending-1.jpg";
 import trending2 from "@/assets/trending-2.jpg";
 import trending3 from "@/assets/trending-3.jpg";
@@ -51,7 +51,7 @@ const offerings = [
   },
   { 
     icon: Laptop, 
-    title: "Digital & Technical Upskilling", 
+    title: "Innovation & Design Thinking", 
     description: "Role-based academies covering AI, data analytics, cloud computing, and cybersecurity.",
     color: "bg-cap-orange",
     gradient: "from-cap-orange/10 to-transparent",
@@ -59,19 +59,19 @@ const offerings = [
   },
   { 
     icon: Users, 
-    title: "Team Effectiveness", 
-    description: "Workshops strengthening team dynamics, collaboration, and organizational communication.",
+    title: "Soft Skills Training", 
+    description: "Enhance communication, collaboration, and interpersonal skills to build a more cohesive workforce.",
     color: "bg-cap-green",
     gradient: "from-cap-green/10 to-transparent",
-    path: "/what-we-do/services/tcb/team-effectiveness"
+    path: "/what-we-do/services/tcb/soft-skills-training"
   },
   { 
     icon: Lightbulb, 
-    title: "Innovation & Design Thinking", 
-    description: "Bootcamps embedding design thinking, agile methodologies, and creative problem-solving.",
+    title: "Sales & Customer Excellence", 
+    description: "Boost revenue with training on consultative selling, negotiation, and customer experience management.",
     color: "bg-cap-red",
     gradient: "from-cap-red/10 to-transparent",
-    path: "/what-we-do/services/tcb/innovation-design-thinking"
+    path: "/what-we-do/services/tcb/sales-customer-excellence"
   },
   { 
     icon: GraduationCap, 
@@ -83,11 +83,11 @@ const offerings = [
   },
   { 
     icon: Award, 
-    title: "Certification & Compliance", 
-    description: "Industry-recognized certifications and regulatory compliance training at scale.",
+    title: "BehavioralMindsetTraining", 
+    description: "Transform workplace culture with programs focused on growth mindset, resilience, and emotional intelligence.",
     color: "bg-cap-orange",
     gradient: "from-cap-orange/10 to-transparent",
-    path: "/what-we-do/services/tcb/certification-compliance"
+    path: "/what-we-do/services/tcb/behavioral-mindset-training"
   },
 ];
 
@@ -176,8 +176,8 @@ const trendingInsights = [
 
 // ─── Mosaic card images (replace these with your own assets if needed) ────────
 const mosaicImages = [
-  "https://images.unsplash.com/photo-1519608487953-e999c86e7455?w=800&q=80",
-  "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80",
+  "https://images.unsplash.com/photo-1758691736407-02406d18df6c?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1758873269035-aae0e1fd3422?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 ];
 
 const TCB = () => {

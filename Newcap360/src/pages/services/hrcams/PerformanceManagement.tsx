@@ -17,6 +17,7 @@ import {
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion, AnimatePresence } from "framer-motion";
 import Performance from "@/assets/Performance.png";
+import hrstrategy from "@/assets/HR Strategy.png";
 
 const PerformanceManagement = () => {
   const { ref: sRef, isInView: sInView } = useScrollAnimation(0.1);
@@ -428,30 +429,30 @@ const PerformanceManagement = () => {
 
   const cards = [
     {
-      icon: <Heart className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Enhanced satisfaction",
-      desc: "Achieve higher customer loyalty and a positive brand reputation through proactive customer service and efficient issue resolution.",
-    },
-    {
-      icon: <Cog className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Operational efficiency",
-      desc: "Reduce response times and operational costs, ensuring optimal resource utilization and increased business productivity.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Skilled workforce",
-      desc: "Equip agents with the right tools, insights and capabilities to deliver exceptional customer experiences consistently.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "AI-driven insights",
-      desc: "Leverage AI-powered analytics to improve decision-making and customer engagement.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Scalable operations",
-      desc: "Build systems and processes that scale seamlessly as your business grows.",
-    },
+  icon: <Heart className="w-12 h-12 text-orange-500 mb-6" />,
+  title: "Enhanced performance culture",
+  desc: "Build a disciplined, outcome-driven culture through structured goal setting, KPI alignment, and performance management systems that drive accountability and measurable business results.",
+},
+{
+  icon: <Cog className="w-12 h-12 text-orange-500 mb-6" />,
+  title: "Operational efficiency & governance",
+  desc: "Streamline HR processes with structured review mechanisms, governance-ready frameworks, and compliant systems that reduce inefficiencies while optimizing cost and productivity.",
+},
+{
+  icon: <Cpu className="w-12 h-12 text-orange-500 mb-6" />,
+  title: "High-performing workforce",
+  desc: "Enable teams with clarity, continuous feedback, and performance improvement frameworks to drive consistent productivity and alignment with business goals.",
+},
+{
+  icon: <BarChart3 className="w-12 h-12 text-orange-500 mb-6" />,
+  title: "Data-driven performance insights",
+  desc: "Leverage performance analytics, review rhythms, and KPI tracking to enable informed decision-making and timely course correction.",
+},
+{
+  icon: <TrendingUp className="w-12 h-12 text-orange-500 mb-6" />,
+  title: "Scalable people systems",
+  desc: "Design structured, future-ready HR systems and processes that scale seamlessly with business growth while maintaining control and performance discipline.",
+},
   ];
 
   const visibleCards = 3;
@@ -489,7 +490,7 @@ const PerformanceManagement = () => {
           <span className="text-white font-medium">Customer Service</span>
           <span className="mx-2">/</span>
           <span className="text-gray-400">
-            Vision, strategy and implementation
+            Performance Management System 
           </span>
         </div>
 
@@ -516,14 +517,12 @@ const PerformanceManagement = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h1 className="text-[30px] md:text-[48px] lg:text-[54px] font-bold leading-[1.1] mb-6">
-              Turn vision into strategy and strategy into growth
+            <h1 className="text-[30px] md:text-[48px] lg:text-[44px] font-bold leading-[1.1] mb-6">
+              Performance Management System (PMS) Design & Calibration Models
             </h1>
 
             <p className="text-lg text-gray-300 leading-relaxed">
-              Design and implement customer service strategies, talent solutions
-              and operating models that not only delight customers but also
-              drive profitability and sustainable business growth.
+              A Performance Management System (PMS) is not just an annual appraisal form. It is the engine through which your organisation measures, rewards, and develops talent and succession pipe — consistently and fairly.
             </p>
           </motion.div>
         </div>
@@ -566,12 +565,10 @@ const PerformanceManagement = () => {
               DATA
             </div>
 
-            <div className="text-[64px] font-bold mb-6">64%</div>
+            <div className="text-[64px] font-bold mb-6">70%</div>
 
             <p className="text-gray-200 leading-relaxed">
-              of executives are actively making trade-offs between cost
-              efficiency and customer satisfaction, highlighting the importance
-              of balancing these factors.
+              of organisations struggle to align performance management with business goals, leading to inefficiencies and inconsistent outcomes.
             </p>
           </motion.div>
         </div>
@@ -585,8 +582,8 @@ const PerformanceManagement = () => {
           {/* HEADING */}
           <div className="mb-16">
             <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.1]">
-              How vision, strategy and <br />
-              implementation is changing
+             Strategic HR & Organisation  <br />
+              Effectiveness Advisory
             </h2>
           </div>
 
@@ -595,9 +592,9 @@ const PerformanceManagement = () => {
             {/* LEFT IMAGE */}
             <div>
               <img
-                src="/image2.jpg"
+                src={hrstrategy}
                 alt="AI Experience"
-                className="w-full h-[420px] object-cover"
+                className="w-full h-[570px] object-cover"
               />
             </div>
 
@@ -606,13 +603,11 @@ const PerformanceManagement = () => {
               <div className="w-10 h-[3px] bg-purple-500 mb-6"></div>
 
               <h3 className="text-lg md:text-xl font-semibold mb-6">
-                Implement a service strategy powered by AI
+                Transform HR into a strategic driver of business success
               </h3>
 
               <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                Generative AI is transforming customer service from reactive
-                support to proactive engagement. By enabling smarter, contextual
-                interactions across the customer journey...
+                We enable organizations to align talent, structure, and culture with business goals through data-driven insights, effective organization design, and leadership development—creating agile, high-performing, and future-ready teams...
               </p>
             </div>
           </div>

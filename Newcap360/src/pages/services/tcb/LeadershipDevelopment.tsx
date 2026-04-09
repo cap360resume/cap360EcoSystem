@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, Award, Users, Target, Lightbulb, Brain, Compass, Rocket, ChevronRight, Star, TrendingUp, Shield, Zap } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { useRef, useState } from "react";
-import heroImg from "@/assets/service-hero-tcb.jpg";
+import heroImg from "@/assets/heroImg.jpg";
 
 const programs = [
   {
@@ -18,8 +18,8 @@ const programs = [
       "Learn foundational principles of effective leadership, self-awareness, emotional intelligence basics, team dynamics, and the difference between management and leadership. Perfect for emerging leaders and high-potential individual contributors stepping into leadership for the first time.",
     format: "2–3 days",
     mode: "Hybrid",
-    accent: "#FF6B35",
-    gradient: "from-orange-500/10 to-amber-500/5",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
   },
   {
     icon: Compass,
@@ -30,8 +30,8 @@ const programs = [
       "Designed for leaders stepping into new roles or higher responsibilities. Learn to establish credibility quickly, manage team expectations, handle organizational politics, maintain credibility, and lead through ambiguity.",
     format: "2–3 days",
     mode: "Hybrid",
-    accent: "#3B82F6",
-    gradient: "from-blue-500/10 to-cyan-500/5",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
   },
   {
     icon: TrendingUp,
@@ -42,8 +42,8 @@ const programs = [
       "Tailored for experienced leaders. Learn strategic thinking, organizational influence, executive presence, managing change, developing other leaders, and creating lasting organizational impact.",
     format: "3–5 days + Ongoing Coaching",
     mode: "Hybrid",
-    accent: "#8B5CF6",
-    gradient: "from-violet-500/10 to-purple-500/5",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
   },
   {
     icon: Brain,
@@ -54,8 +54,8 @@ const programs = [
       "Learn root cause analysis, structured problem-solving frameworks, decision-making methodologies, and how to guide teams through problem-solving processes. Develop the analytical skills expected at senior levels.",
     format: "2 days",
     mode: "Hybrid",
-    accent: "#10B981",
-    gradient: "from-emerald-500/10 to-teal-500/5",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
   },
   {
     icon: Rocket,
@@ -78,8 +78,8 @@ const programs = [
       "Learn to recruit and develop talent, create accountability, conduct coaching conversations (not just reviews), manage conflict, maintain team motivation, and lead diverse teams toward common goals. Transform team performance.",
     format: "2–3 days + Coaching",
     mode: "Hybrid",
-    accent: "#EC4899",
-    gradient: "from-pink-500/10 to-rose-500/5",
+    accent: "#F59E0B",
+    gradient: "from-amber-500/10 to-yellow-500/5",
   },
 ];
 
@@ -165,33 +165,6 @@ const ProgramCard = ({ program, index }) => {
           <p className="text-[15px] text-muted-foreground leading-[1.7] mb-8">
             {program.description}
           </p>
-
-          {/* Footer row */}
-          {/* <div className="flex items-center justify-between pt-5 border-t border-border/10">
-            <div className="flex gap-4">
-              <div>
-                <div className="text-[11px] font-bold tracking-[0.12em] text-muted-foreground uppercase mb-0.5">
-                  Duration
-                </div>
-                <div className="text-[15px] font-bold">{program.format}</div>
-              </div>
-              <div>
-                <div className="text-[11px] font-bold tracking-[0.12em] text-muted-foreground uppercase mb-0.5">
-                  Mode
-                </div>
-                <div className="text-[15px] font-bold">{program.mode}</div>
-              </div>
-            </div>
-            <motion.div
-              animate={{ x: hovered ? 4 : 0 }}
-              transition={{ duration: 0.2 }}
-            >
-              <ChevronRight
-                className="w-5 h-5"
-                style={{ color: program.accent }}
-              />
-            </motion.div>
-          </div> */}
         </div>
       </div>
     </motion.div>

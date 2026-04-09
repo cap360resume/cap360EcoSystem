@@ -13,6 +13,9 @@ import {
   Heart,
   Cog,
   Cpu,
+  ShieldCheck,
+  Database,
+  MessageSquare,
 } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -104,30 +107,30 @@ content: (
 
   const cards = [
     {
-      icon: <Heart className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Enhanced satisfaction",
-      desc: "Achieve higher customer loyalty and a positive brand reputation through proactive customer service and efficient issue resolution.",
-    },
-    {
-      icon: <Cog className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Operational efficiency",
-      desc: "Reduce response times and operational costs, ensuring optimal resource utilization and increased business productivity.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Skilled workforce",
-      desc: "Equip agents with the right tools, insights and capabilities to deliver exceptional customer experiences consistently.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "AI-driven insights",
-      desc: "Leverage AI-powered analytics to improve decision-making and customer engagement.",
-    },
-    {
-      icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
-      title: "Scalable operations",
-      desc: "Build systems and processes that scale seamlessly as your business grows.",
-    },
+  icon: <Cpu className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "AI-driven productivity",
+  desc: "Automate repetitive HR and operational tasks using AI to reduce manual effort, improve accuracy, and significantly enhance overall productivity.",
+},
+{
+  icon: <Cog className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Operational efficiency & cost optimisation",
+  desc: "Identify and implement high-impact AI use cases that streamline workflows, reduce turnaround time, and optimize operational costs.",
+},
+{
+  icon: <MessageSquare className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Enhanced employee experience",
+  desc: "Enable AI-powered HR chatbots to provide instant, accurate responses to employee queries, improving engagement and reducing HR dependency.",
+},
+{
+  icon: <Database className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Structured knowledge management",
+  desc: "Build AI-ready knowledge frameworks that organize HR policies, FAQs, and processes for accurate retrieval and consistent communication.",
+},
+{
+  icon: <ShieldCheck className="w-12 h-12 text-purple-500 mb-6" />,
+  title: "Responsible & scalable AI adoption",
+  desc: "Implement governance frameworks, accuracy protocols, and phased AI roadmaps to ensure sustainable, secure, and scalable AI integration.",
+},
   ];
 
   const visibleCards = 3;
@@ -227,12 +230,10 @@ Generative AI is reshaping how organisations think about productivity, HR operat
               DATA
             </div>
 
-            <div className="text-[64px] font-bold mb-6">64%</div>
+            <div className="text-[64px] font-bold mb-6">70%</div>
 
             <p className="text-gray-200 leading-relaxed">
-              of executives are actively making trade-offs between cost
-              efficiency and customer satisfaction, highlighting the importance
-              of balancing these factors.
+              of HR tasks can be automated or augmented using AI, significantly improving productivity, accuracy, and cost efficiency
             </p>
           </motion.div>
         </div>
@@ -246,8 +247,8 @@ Generative AI is reshaping how organisations think about productivity, HR operat
           {/* HEADING */}
           <div className="mb-16">
             <h2 className="text-[28px] md:text-[36px] lg:text-[44px] font-bold leading-[1.1]">
-              How vision, strategy and <br />
-              implementation is changing
+              How vision, strategy and implementation are transforming <br /> HR productivity with AI 
+              
             </h2>
           </div>
 
@@ -267,13 +268,11 @@ Generative AI is reshaping how organisations think about productivity, HR operat
               <div className="w-10 h-[3px] bg-purple-500 mb-6"></div>
 
               <h3 className="text-lg md:text-xl font-semibold mb-6">
-                Implement a service strategy powered by AI
+                Move from manual processes to intelligent automation
               </h3>
 
               <p className="text-base md:text-lg text-gray-300 leading-relaxed">
-                Generative AI is transforming customer service from reactive
-                support to proactive engagement. By enabling smarter, contextual
-                interactions across the customer journey...
+                Generative AI is enabling organisations to automate repetitive HR tasks, enhance decision-making, and improve employee experience. By identifying the right use cases, implementing AI tools, and embedding governance frameworks, organisations can unlock measurable productivity gains while ensuring responsible AI adoption....
               </p>
             </div>
           </div>
